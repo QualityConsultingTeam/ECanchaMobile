@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EC.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,19 +13,26 @@ namespace EC
         public App()
         {
             // The root page of your application
-            MainPage = new ContentPage
+            //MainPage = new ContentPage
+            //{
+            //    Content = new StackLayout
+            //    {
+            //        VerticalOptions = LayoutOptions.Center,
+            //        Children = {
+            //            new Label {
+            //                XAlign = TextAlignment.Center,
+            //                Text = "Welcome to Xamarin Forms!"
+            //            }
+            //        }
+            //    }
+            //};
+            MainPage = new NavigationPage(new FieldsView())
             {
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children = {
-                        new Label {
-                            XAlign = TextAlignment.Center,
-                            Text = "Welcome to Xamarin Forms!"
-                        }
-                    }
-                }
+                BarBackgroundColor = Color.FromHex("cb1f24"),
+                BarTextColor = Color.White
             };
+
+            MainPage.Title = "Eviction App";
         }
 
         protected override void OnStart()
