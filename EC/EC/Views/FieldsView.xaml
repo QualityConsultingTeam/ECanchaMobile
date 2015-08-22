@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:common ="EC"
+             xmlns:Render ="EC.Views"
              x:Class="EC.Views.FieldsView">
 	 
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style TargetType="cc:ButtonTextCentered">
+            <Style TargetType="Render:ButtonTextCentered">
                 <Setter Property="BackgroundColor" Value="White"/>
                 <Setter Property="TextColor" Value="Gray"/>
                 <Setter Property="Font" Value="Small"/>
@@ -33,15 +35,15 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackLayout BackgroundColor="{x:Static common:Constants.NavigationBarBackgroundColor}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="51" Padding="0,10,0,0" >
-            <Render:LabelRender Text="{x:Static helpers:TextHelper.News}" TextColor="{x:Static common:Constants.RedColorHex}" FontSize="20"
+        <StackLayout BackgroundColor="{x:Static Constants.NavigationBarBackgroundColor}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="51" Padding="0,10,0,0" >
+            <Render:LabelRender Text="{x:Static common:TextConstant.FieldsViewTitle}" TextColor="{x:Static common:Constants.RedColorHex}" FontSize="20"
                    VerticalOptions="CenterAndExpand" HorizontalOptions="Center" />
             <StackLayout BackgroundColor="{x:Static common:Constants.BorderColor}" HeightRequest="1"/>
         </StackLayout>
 
-        <cc:ButtonTextCentered Text="{x:Static helpers:TextHelper.News}" BackgroundColor="{Binding Tab1BackgroundColor}" TextColor="{Binding Tab1TextColor}"
+        <Render:ButtonTextCentered Text="{x:Static common:TextConstatn.FieldsViewTitle}" BackgroundColor="{Binding Tab1BackgroundColor}" TextColor="{Binding Tab1TextColor}"
             Command="{Binding Tab1Command}" Grid.Column="0" Grid.Row="1" />
-        <cc:ButtonTextCentered Text="{x:Static helpers:TextHelper.DentsplyMaillefer}" BackgroundColor="{Binding Tab2BackgroundColor}" TextColor="{Binding Tab2TextColor}"
+        <Render:ButtonTextCentered Text="{x:Static common:TextConstatn.FieldsViewTitle}" BackgroundColor="{Binding Tab2BackgroundColor}" TextColor="{Binding Tab2TextColor}"
             Command="{Binding Tab2Command}" Grid.Column="1" Grid.Row="1" />
 
         <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="{x:Static common:Constants.BorderColor}"/>
@@ -94,14 +96,14 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <customControl:CustomWebView Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"
+        <Render:CustomWebView Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"
              IsVisible="{Binding IsTab2Selected}" HeightRequest="400" PdfPath="{Binding PdfPath}" x:Name="DentsplyWebView"/>
 
-        <customControl:NavigationBarView Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"
+        <!--<customControl:NavigationBarView Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"
                                      DocumentsCommand="{Binding DocumentsCommand}" InfoCommand="{Binding InfoCommand}" WorkshopsCommand="{Binding WorkshopsCommand}"
                                      MapCommand="{Binding MapCommand}" CityGuideCommand="{Binding CityGuideCommand}"
                                      InfoImage="{Binding InfoImage}" WorkshopsImage="{Binding WorkshopsImage}" DocumentsImage="{Binding DocumentsImage}"
-                                     MapImage="{Binding MapImage}" CityGuideImage="{Binding CityGuideImage}"/>
+                                     MapImage="{Binding MapImage}" CityGuideImage="{Binding CityGuideImage}"/>-->
 
     </Grid>
 </ContentPage>

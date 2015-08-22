@@ -39,10 +39,18 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Interfaces\IDownloader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\CustomControls\AlertView.cs" />
+    <Compile Include="Views\CustomControls\CustomEntry.cs" />
+    <Compile Include="Views\CustomControls\CustomWebView.cs" />
+    <Compile Include="Views\CustomControls\NavigationBarView.cs" />
     <Compile Include="Views\FieldsView.xaml.cs">
       <DependentUpon>FieldsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Renderer\ButtonTextCentered.cs" />
     <Compile Include="Views\Renderer\CircleLabelView.cs" />
+    <Compile Include="Views\Renderer\CustomSwitch.cs" />
+    <Compile Include="Views\Renderer\LabelRender.cs" />
+    <Compile Include="Views\Renderer\MyViewCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ModernHttpClient, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">

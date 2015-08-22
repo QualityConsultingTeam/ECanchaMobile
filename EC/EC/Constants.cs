@@ -24,5 +24,13 @@ namespace EC
         public static Color RedColor = Color.FromHex(RedColorHex);
         public static Color WhiteColor = Color.FromHex(WhiteColorHex);
         public static Color GreyColor = Color.FromHex(GreyColorHex);
+
+
+        
+    }
+
+    public class TextConstant
+    {
+        public static string FieldsViewTitle = "Canchas";
     }
 }
