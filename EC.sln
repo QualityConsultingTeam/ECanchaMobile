@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EC.Droid", "EC\EC.Droid\EC.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EC.WinPhone", "EC\EC.WinPhone\EC.WinPhone.csproj", "{7F64D4DC-9450-4810-9EF2-B10F9813F42B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{D47C2F75-E8FF-41D7-BFF3-7639E4CEF8B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Native Mobile Apps", "Native Mobile Apps", "{61D05540-6648-4DD6-9809-FA546BBB1FFC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Desktop", "Desktop", "{0F60D6BD-240F-4B53-AAF3-D4DA3F4552A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
@@ -226,5 +232,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E0934903-F647-4A58-8811-513D65D725BD} = {D47C2F75-E8FF-41D7-BFF3-7639E4CEF8B8}
 	EndGlobalSection
 EndGlobal
