@@ -37,8 +37,22 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="DocumentResponse\BaseModel.cs" />
+    <Compile Include="DocumentResponse\Booking.cs" />
+    <Compile Include="DocumentResponse\Center.cs" />
+    <Compile Include="DocumentResponse\Cost.cs" />
+    <Compile Include="DocumentResponse\Enums.cs" />
+    <Compile Include="DocumentResponse\Field.cs" />
+    <Compile Include="DocumentResponse\FilterOptionModel.cs" />
     <Compile Include="Interfaces\IDownloader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceAgents\Base\BaseRequest.cs" />
+    <Compile Include="ServiceAgents\Base\IBaseRequest.cs" />
+    <Compile Include="ServiceAgents\CoreClient.cs" />
+    <Compile Include="ServiceAgents\FieldsService.cs" />
+    <Compile Include="ServiceAgents\Interfaces\ICoreClient.cs" />
+    <Compile Include="ServiceAgents\Interfaces\IFieldsService.cs" />
+    <Compile Include="ServiceAgents\Interfaces\IUpdatableUrl.cs" />
     <Compile Include="Views\CustomControls\AlertView.cs" />
     <Compile Include="Views\CustomControls\CustomEntry.cs" />
     <Compile Include="Views\CustomControls\CustomWebView.cs" />
@@ -88,7 +102,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Converters\" />
-    <Folder Include="Services\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>

@@ -32,7 +32,7 @@ namespace EC
                 BarTextColor = Color.White
             };
 
-            MainPage.Title = "Eviction App";
+            MainPage.Title = "En la Cancha App";
         }
 
         protected override void OnStart()

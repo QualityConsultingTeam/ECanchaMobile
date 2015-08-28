@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:common ="EC"
-             xmlns:Render ="EC.Views"
+             xmlns:common ="clr-namespace:EC"
+             xmlns:Render ="clr-namespace:EC.Views"
              x:Class="EC.Views.FieldsView">
 	 
 
@@ -95,15 +95,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
-        <Render:CustomWebView Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"
-             IsVisible="{Binding IsTab2Selected}" HeightRequest="400" PdfPath="{Binding PdfPath}" x:Name="DentsplyWebView"/>
-
-        <!--<customControl:NavigationBarView Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"
-                                     DocumentsCommand="{Binding DocumentsCommand}" InfoCommand="{Binding InfoCommand}" WorkshopsCommand="{Binding WorkshopsCommand}"
-                                     MapCommand="{Binding MapCommand}" CityGuideCommand="{Binding CityGuideCommand}"
-                                     InfoImage="{Binding InfoImage}" WorkshopsImage="{Binding WorkshopsImage}" DocumentsImage="{Binding DocumentsImage}"
-                                     MapImage="{Binding MapImage}" CityGuideImage="{Binding CityGuideImage}"/>-->
 
     </Grid>
 </ContentPage>

@@ -32,5 +32,6 @@ namespace EC
     public class TextConstant
     {
         public static string FieldsViewTitle = "Canchas";
+        public static string Wait = "Por Favor Espere";
     }
 }

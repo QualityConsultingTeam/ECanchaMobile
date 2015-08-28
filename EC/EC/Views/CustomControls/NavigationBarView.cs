@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
-using Common;
+ 
 using Xamarin.Forms;
 
 namespace EC.Views
@@ -10,20 +10,20 @@ namespace EC.Views
         
         #region Bindable Properties
         
-        public static readonly BindableProperty InfoImageProperty =
-            BindableProperty.Create((NavigationBarView navView) => navView.InfoImage, Constants.InfoImageSource);
+        //public static readonly BindableProperty InfoImageProperty =
+        //    BindableProperty.Create((NavigationBarView navView) => navView.InfoImage, Constants.InfoImageSource);
 
-        public static readonly BindableProperty WorkshopsImageProperty =
-            BindableProperty.Create((NavigationBarView navView) => navView.WorkshopsImage, Constants.WorkshopsImageSource);
+        //public static readonly BindableProperty WorkshopsImageProperty =
+        //    BindableProperty.Create((NavigationBarView navView) => navView.WorkshopsImage, Constants.WorkshopsImageSource);
 
-        public static readonly BindableProperty DocumentsImageProperty =
-            BindableProperty.Create((NavigationBarView navView) => navView.DocumentsImage, Constants.DocumentsImageSource);
+        //public static readonly BindableProperty DocumentsImageProperty =
+        //    BindableProperty.Create((NavigationBarView navView) => navView.DocumentsImage, Constants.DocumentsImageSource);
 
-        public static readonly BindableProperty MapImageProperty =
-            BindableProperty.Create((NavigationBarView navView) => navView.MapImage, Constants.MapImageSource);
+        //public static readonly BindableProperty MapImageProperty =
+        //    BindableProperty.Create((NavigationBarView navView) => navView.MapImage, Constants.MapImageSource);
 
-        public static readonly BindableProperty CityGuideImageProperty =
-            BindableProperty.Create((NavigationBarView navView) => navView.CityGuideImage, Constants.CityGuideImageSource);
+        //public static readonly BindableProperty CityGuideImageProperty =
+        //    BindableProperty.Create((NavigationBarView navView) => navView.CityGuideImage, Constants.CityGuideImageSource);
 
         public static readonly BindableProperty InfoCommandProperty =
             BindableProperty.Create((NavigationBarView navView) => navView.InfoCommand, new Command(() => { }));
@@ -45,35 +45,35 @@ namespace EC.Views
 
         #region Properties
         
-        public ImageSource InfoImage
-        {
-            get { return (ImageSource) GetValue(InfoImageProperty); }
-            set { SetValue(InfoImageProperty, value); }
-        }
+        //public ImageSource InfoImage
+        //{
+        //    get { return (ImageSource) GetValue(InfoImageProperty); }
+        //    set { SetValue(InfoImageProperty, value); }
+        //}
 
-        public ImageSource WorkshopsImage
-        {
-            get { return (ImageSource) GetValue(WorkshopsImageProperty); }
-            set { SetValue(WorkshopsImageProperty, value); }
-        }
+        //public ImageSource WorkshopsImage
+        //{
+        //    get { return (ImageSource) GetValue(WorkshopsImageProperty); }
+        //    set { SetValue(WorkshopsImageProperty, value); }
+        //}
 
-        public ImageSource DocumentsImage
-        {
-            get { return (ImageSource) GetValue(DocumentsImageProperty); }
-            set { SetValue(DocumentsImageProperty, value); }
-        }
+        //public ImageSource DocumentsImage
+        //{
+        //    get { return (ImageSource) GetValue(DocumentsImageProperty); }
+        //    set { SetValue(DocumentsImageProperty, value); }
+        //}
 
-        public ImageSource MapImage
-        {
-            get { return (ImageSource) GetValue(MapImageProperty); }
-            set { SetValue(MapImageProperty, value); }
-        }
+        //public ImageSource MapImage
+        //{
+        //    get { return (ImageSource) GetValue(MapImageProperty); }
+        //    set { SetValue(MapImageProperty, value); }
+        //}
 
-        public ImageSource CityGuideImage
-        {
-            get { return (ImageSource) GetValue(CityGuideImageProperty); }
-            set { SetValue(CityGuideImageProperty, value); }
-        }
+        //public ImageSource CityGuideImage
+        //{
+        //    get { return (ImageSource) GetValue(CityGuideImageProperty); }
+        //    set { SetValue(CityGuideImageProperty, value); }
+        //}
 
         public ICommand InfoCommand
         {

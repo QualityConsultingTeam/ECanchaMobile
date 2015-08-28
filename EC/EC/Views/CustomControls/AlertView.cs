@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Common.Helpers;
+ 
 using EC.Views;
 using Xamarin.Forms;
 
@@ -25,7 +25,7 @@ namespace EC.Views
 
             this.Children.Add(loading);
 
-            label.Text = TextHelper.Wait;
+            label.Text = TextConstant.Wait;
 
             label.TextColor = Color.White;
 
