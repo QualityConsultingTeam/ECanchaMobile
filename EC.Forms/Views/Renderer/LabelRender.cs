@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace EC.Views
+namespace EC.Forms.Views
 {
-    public class MyViewCell : ViewCell
+    public class LabelRender: Label
     {
     }
 }

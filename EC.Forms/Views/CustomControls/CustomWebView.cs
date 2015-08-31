@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace EC.Views
+namespace EC.Forms.Views
 {
 	public class CustomWebView : WebView
 	{

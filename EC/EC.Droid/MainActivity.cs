@@ -17,7 +17,7 @@ namespace EC.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            LoadApplication(new EC.App());
+            LoadApplication(new EC.Forms.App());
         }
     }
 }

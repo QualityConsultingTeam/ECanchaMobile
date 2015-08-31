@@ -18,7 +18,7 @@ namespace EC.WinPhone
             SupportedOrientations = SupportedPageOrientation.PortraitOrLandscape;
 
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new EC.App());
+            LoadApplication(new EC.Forms.App());
         }
     }
 }

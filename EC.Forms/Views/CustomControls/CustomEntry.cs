@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace EC.Views
+namespace EC.Forms.Views
 {
     /// <summary>
     /// Elemento CustomEntry que posee un Placeholder Centrado

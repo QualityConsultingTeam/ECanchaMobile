@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace EC.Views
+namespace EC.Forms.Views
 {
     // Call control in the XAML:
     // xmlns:local="clr-namespace:MyCompanion.Views.Renderer;assembly=MyCompanion"

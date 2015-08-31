@@ -35,8 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="App.cs" />
-    <Compile Include="Constants.cs" />
     <Compile Include="DocumentResponse\BaseModel.cs" />
     <Compile Include="DocumentResponse\Booking.cs" />
     <Compile Include="DocumentResponse\Center.cs" />
@@ -44,7 +42,19 @@
     <Compile Include="DocumentResponse\Enums.cs" />
     <Compile Include="DocumentResponse\Field.cs" />
     <Compile Include="DocumentResponse\FilterOptionModel.cs" />
+    <Compile Include="Infrastructure\Abstractions\Repositories\IApplicationDataRepository.cs" />
+    <Compile Include="Infrastructure\Abstractions\Services\IApplicationSettingServiceSingleton.cs" />
+    <Compile Include="Infrastructure\Abstractions\Services\IApplicationStorageService.cs" />
+    <Compile Include="Infrastructure\Abstractions\Services\ILocationServiceSingleton.cs" />
+    <Compile Include="Infrastructure\ApplicationSettingServiceSingleton.cs" />
+    <Compile Include="Infrastructure\ApplicationStorageService.cs" />
+    <Compile Include="Infrastructure\LocationServiceSingleton.cs" />
     <Compile Include="Interfaces\IDownloader.cs" />
+    <Compile Include="Messages\ReloadDataMessage.cs" />
+    <Compile Include="Model\Enums\RideDetailWorkflow.cs" />
+    <Compile Include="Model\GroupRide.cs" />
+    <Compile Include="Model\Location.cs" />
+    <Compile Include="Model\LocationCalculatedEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceAgents\Base\BaseRequest.cs" />
     <Compile Include="ServiceAgents\Base\IBaseRequest.cs" />
@@ -53,18 +63,7 @@
     <Compile Include="ServiceAgents\Interfaces\ICoreClient.cs" />
     <Compile Include="ServiceAgents\Interfaces\IFieldsService.cs" />
     <Compile Include="ServiceAgents\Interfaces\IUpdatableUrl.cs" />
-    <Compile Include="Views\CustomControls\AlertView.cs" />
-    <Compile Include="Views\CustomControls\CustomEntry.cs" />
-    <Compile Include="Views\CustomControls\CustomWebView.cs" />
-    <Compile Include="Views\CustomControls\NavigationBarView.cs" />
-    <Compile Include="Views\FieldsView.xaml.cs">
-      <DependentUpon>FieldsView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Renderer\ButtonTextCentered.cs" />
-    <Compile Include="Views\Renderer\CircleLabelView.cs" />
-    <Compile Include="Views\Renderer\CustomSwitch.cs" />
-    <Compile Include="Views\Renderer\LabelRender.cs" />
-    <Compile Include="Views\Renderer\MyViewCell.cs" />
+    <Compile Include="Settings\CommonAppSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ModernHttpClient, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -102,13 +101,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Converters\" />
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Views\FieldsView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.1.3.3.6323\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

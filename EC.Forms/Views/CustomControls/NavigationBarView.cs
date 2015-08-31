@@ -3,7 +3,7 @@ using System.Windows.Input;
  
 using Xamarin.Forms;
 
-namespace EC.Views
+namespace EC.Forms.Views
 {
     public class NavigationBarView : Grid
     {
@@ -24,21 +24,7 @@ namespace EC.Views
 
         //public static readonly BindableProperty CityGuideImageProperty =
         //    BindableProperty.Create((NavigationBarView navView) => navView.CityGuideImage, Constants.CityGuideImageSource);
-
-        public static readonly BindableProperty InfoCommandProperty =
-            BindableProperty.Create((NavigationBarView navView) => navView.InfoCommand, new Command(() => { }));
-
-        public static readonly BindableProperty WorkshopsCommandProperty =
-            BindableProperty.Create((NavigationBarView navView) => navView.WorkshopsCommand, new Command(() => { }));
-
-        public static readonly BindableProperty DocumentsCommandProperty =
-            BindableProperty.Create((NavigationBarView navView) => navView.DocumentsCommand, new Command(() => { }));
-
-        public static readonly BindableProperty MapCommandProperty =
-            BindableProperty.Create((NavigationBarView navView) => navView.MapCommand, new Command(() => { }));
-
-        public static readonly BindableProperty CityGuideCommandProperty =
-            BindableProperty.Create((NavigationBarView navView) => navView.CityGuideCommand, new Command(() => { }));
+         
         
         #endregion
         
@@ -75,35 +61,7 @@ namespace EC.Views
         //    set { SetValue(CityGuideImageProperty, value); }
         //}
 
-        public ICommand InfoCommand
-        {
-            get { return (ICommand) GetValue(InfoCommandProperty); }
-            set { SetValue(InfoCommandProperty, value); }
-        }
-
-        public ICommand WorkshopsCommand
-        {
-            get { return (ICommand) GetValue(WorkshopsCommandProperty); }
-            set { SetValue(WorkshopsCommandProperty, value); }
-        }
-
-        public ICommand DocumentsCommand
-        {
-            get { return (ICommand) GetValue(DocumentsCommandProperty); }
-            set { SetValue(DocumentsCommandProperty, value); }
-        }
-
-        public ICommand MapCommand
-        {
-            get { return (ICommand) GetValue(MapCommandProperty); }
-            set { SetValue(MapCommandProperty, value); }
-        }
-
-        public ICommand CityGuideCommand
-        {
-            get { return (ICommand) GetValue(CityGuideCommandProperty); }
-            set { SetValue(CityGuideCommandProperty, value); }
-        }
+       
        
         #endregion
 
@@ -144,10 +102,7 @@ namespace EC.Views
             Children.Add(new StackLayout {BackgroundColor = Constants.BorderColor}, 0, 5, 0, 1);
 
             Children.Add(CreateImageButton("InfoImage", "InfoCommand"), 0, 1);
-            Children.Add(CreateImageButton("WorkshopsImage", "WorkshopsCommand"), 1, 1);
-            Children.Add(CreateImageButton("DocumentsImage", "DocumentsCommand"), 2, 1);
-            Children.Add(CreateImageButton("MapImage", "MapCommand"), 3, 1);
-            Children.Add(CreateImageButton("CityGuideImage", "CityGuideCommand"), 4, 1);
+            
         }
 
         /// <summary>

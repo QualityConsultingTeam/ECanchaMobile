@@ -1,5 +1,6 @@
 ﻿//using EC.Client.Core.Infrastructure.Abstractions.Services;
 //using EC.Client.Core.Messages;
+using EC.Client.Core.Infrastructure.Abstractions.Services;
 using EC.Client.Core.ServiceAgents.Interfaces;
 using System;
 
@@ -8,25 +9,31 @@ namespace EC.Client.Core.ServiceAgents
     public class CoreClient : ICoreClient
     {
         private readonly IApplicationSettingServiceSingleton _applicationSettingService;
-       // private readonly IApplicationStorageService _applicationStorageService;
+          private readonly IApplicationStorageService _applicationStorageService;
         //private readonly IMvxMessenger _messenger;
         //private readonly MvxSubscriptionToken _token;
 
         IFieldsService _fieldService;
-        
-        public IFieldsService AnalyticsService
+
+        public IFieldsService FieldsService
         {
             get
             {
-                return _fieldService ?? (_fieldService = new FieldsService(_applicationSettingService.UrlPrefix, _applicationStorageService.SecurityToken));
+                return _fieldService ?? 
+                    (_fieldService = StartService() );
+                     
             }
         }
 
-     
+      private FieldsService StartService()
+        {
+            return new FieldsService(_applicationSettingService.UrlPrefix, _applicationStorageService.SecurityToken);
+        }
+
         public CoreClient(
             IApplicationSettingServiceSingleton applicationSettingService,
-            IApplicationStorageService applicationStorageService,
-            IMvxMessenger messenger)
+            IApplicationStorageService applicationStorageService)
+            //IMvxMessenger messenger)
         {
             if (applicationSettingService == null)
             {
@@ -38,17 +45,19 @@ namespace EC.Client.Core.ServiceAgents
                 throw new ArgumentNullException("applicationStorageService");
             }
 
-            if (messenger == null)
-            {
-                throw new ArgumentNullException("messenger");
-            }
+            //if (messenger == null)
+            //{
+            //    throw new ArgumentNullException("messenger");
+            //}
 
             _applicationSettingService = applicationSettingService;
             _applicationStorageService = applicationStorageService;
-            _messenger = messenger;
+            //_messenger = messenger;
 
-            _token = _messenger.Subscribe<ReloadDataMessage>(_ => Refresh());
+            //_token = _messenger.Subscribe<ReloadDataMessage>(_ => Refresh());
         }
+
+      
 
         // NOTE: In order to notify "child" _*Service on UrlPrefix
         // change, make 2 things:
@@ -60,7 +69,7 @@ namespace EC.Client.Core.ServiceAgents
             _applicationStorageService.Refresh();
 
             this.UpdateUrlPrefix(_fieldService);
-           
+
         }
 
         private void UpdateUrlPrefix(IUpdatableUrl service)
@@ -69,6 +78,11 @@ namespace EC.Client.Core.ServiceAgents
             {
                 service.UrlPrefix = _applicationSettingService.UrlPrefix;
             }
+        }
+
+        void ICoreClient.Refresh()
+        {
+            throw new NotImplementedException();
         }
     }
 }

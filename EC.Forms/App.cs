@@ -1,4 +1,7 @@
-﻿using EC.Views;
+﻿using EC.Client.Core.Infrastructure;
+using EC.Client.Core.ServiceAgents;
+using EC.Forms.Infrastructure;
+using EC.Forms.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +9,7 @@ using System.Text;
 
 using Xamarin.Forms;
 
-namespace EC
+namespace EC.Forms
 {
     public class App : Application
     {
@@ -26,10 +29,12 @@ namespace EC
             //        }
             //    }
             //};
-            MainPage = new NavigationPage(new FieldsView())
+          
+            MainPage = new NavigationPage(new FieldView())
             {
                 BarBackgroundColor = Color.FromHex("cb1f24"),
-                BarTextColor = Color.White
+                BarTextColor = Color.White,
+                
             };
 
             MainPage.Title = "En la Cancha App";
@@ -49,5 +54,7 @@ namespace EC
         {
             // Handle when your app resumes
         }
+
+      
     }
 }

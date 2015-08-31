@@ -1,6 +1,7 @@
 ﻿namespace EC.Client.Core.ServiceAgents
 {
     using EC.Client.Core.DocumentResponse;
+    using Interfaces;
     using System;
     using System.Collections.Generic;
     using System.Globalization;
@@ -14,8 +15,7 @@
             : base(urlPrefix, securityToken)
         {
 
-        }
-
+        } 
         public async Task<List<Field>> GetFields()
         {
             string url = String.Format(CultureInfo.InvariantCulture
