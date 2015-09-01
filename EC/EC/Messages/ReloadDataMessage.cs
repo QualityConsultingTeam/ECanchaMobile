@@ -1,6 +1,6 @@
 ﻿//using Cirrious.MvvmCross.Plugins.Messenger;
 
-namespace EC.Client.Core.Messages
+namespace EC.Messages
 {
     public class ReloadDataMessage //: MvxMessage
     {

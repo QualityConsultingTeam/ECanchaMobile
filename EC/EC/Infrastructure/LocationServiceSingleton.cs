@@ -1,10 +1,10 @@
 ﻿using System;
 //using Cirrious.MvvmCross.Plugins.Location;
-using EC.Client.Core.Infrastructure.Abstractions.Services;
-using EC.Client.Core.Model;
+using EC.Infrastructure.Abstractions.Services;
+using EC.Model;
 using System.Threading.Tasks;
 
-namespace EC.Client.Core.Infrastructure
+namespace EC.Infrastructure
 {
     public class LocationServiceSingleton : ILocationServiceSingleton
     {

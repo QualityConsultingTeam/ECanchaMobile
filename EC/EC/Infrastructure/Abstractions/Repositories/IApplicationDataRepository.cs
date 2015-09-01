@@ -1,4 +1,4 @@
-﻿namespace EC.Client.Core.Infrastructure.Abstractions.Repositories
+﻿namespace EC.Infrastructure.Abstractions.Repositories
 {
     public interface IApplicationDataRepository
     {

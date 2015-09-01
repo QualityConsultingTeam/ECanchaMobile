@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EC.Client.Core.DocumentResponse
+namespace EC.DocumentResponse
 {
     public class Center : BaseModel
     {
