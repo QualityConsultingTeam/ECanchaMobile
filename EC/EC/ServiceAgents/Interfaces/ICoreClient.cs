@@ -1,4 +1,4 @@
-﻿namespace EC.ServiceAgents.Interfaces
+﻿namespace EC.Client.Core.ServiceAgents.Interfaces
 {
     public interface ICoreClient
     {

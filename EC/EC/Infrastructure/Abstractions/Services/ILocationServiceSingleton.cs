@@ -1,8 +1,8 @@
 ﻿using System;
-using EC.Model;
+using EC.Client.Core.Model;
 using System.Threading.Tasks;
 
-namespace EC.Infrastructure.Abstractions.Services
+namespace EC.Client.Core.Infrastructure.Abstractions.Services
 {
     public interface ILocationServiceSingleton
     {

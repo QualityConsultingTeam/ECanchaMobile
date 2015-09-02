@@ -1,6 +1,6 @@
-﻿namespace EC.ServiceAgents
+﻿namespace EC.Client.Core.ServiceAgents
 {
-    using EC.DocumentResponse;
+    using EC.Client.Core.DocumentResponse;
     using Interfaces;
     using System;
     using System.Collections.Generic;

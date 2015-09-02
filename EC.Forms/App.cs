@@ -1,4 +1,11 @@
-﻿using EC.Forms.Views;
+﻿using EC.Client.Core.Infrastructure;
+using EC.Client.Core.ServiceAgents;
+using EC.Forms.Infrastructure;
+using EC.Forms.Views;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 using Xamarin.Forms;
 

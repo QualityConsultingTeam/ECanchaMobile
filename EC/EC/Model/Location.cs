@@ -1,4 +1,4 @@
-﻿namespace EC.Model
+﻿namespace EC.Client.Core.Model
 {
     public class Location
     {

@@ -1,8 +1,8 @@
-﻿using EC.Infrastructure.Abstractions.Repositories;
-using EC.Infrastructure.Abstractions.Services;
+﻿using EC.Client.Core.Infrastructure.Abstractions.Repositories;
+using EC.Client.Core.Infrastructure.Abstractions.Services;
 using System;
 
-namespace EC.Infrastructure
+namespace EC.Client.Core.Infrastructure
 {
     public class ApplicationStorageService : IApplicationStorageService
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EC.ServiceAgents.Interfaces
+namespace EC.Client.Core.ServiceAgents.Interfaces
 {
     public interface IUpdatableUrl
     {

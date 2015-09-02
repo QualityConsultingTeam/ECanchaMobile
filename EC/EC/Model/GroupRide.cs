@@ -1,4 +1,4 @@
-﻿using EC.DocumentResponse;
+﻿using EC.Client.Core.DocumentResponse;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

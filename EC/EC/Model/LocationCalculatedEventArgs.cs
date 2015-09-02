@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EC.Model
+namespace EC.Client.Core.Model
 {
     public class LocationCalculatedEventArgs : EventArgs
     {

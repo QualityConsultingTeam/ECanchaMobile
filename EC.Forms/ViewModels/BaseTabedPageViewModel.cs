@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EC.Forms.ViewModels
 {
-    //public class BaseTabedPageViewModel :BaseViewModel
-    //{
-    //}
+    public class BaseTabedPageViewModel :BaseViewModel
+    {
+    }
 }

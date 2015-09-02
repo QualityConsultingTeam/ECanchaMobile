@@ -1,11 +1,17 @@
-﻿using EC.DocumentResponse;
+﻿using EC.Client.Core.DocumentResponse;
+using EC.Client.Core.Infrastructure.Abstractions.Services;
+using EC.Client.Core.ServiceAgents.Interfaces;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace EC.Forms.ViewModels
 {
-
+    
     public class FieldsViewModel : BaseTabbedViewModel
     {
 
@@ -91,7 +97,6 @@ namespace EC.Forms.ViewModels
         {
             if (IsBusy) return;
             FieldsCollection = await CoreClient.FieldsService.GetFields(new FilterOptionModel() { });
-            IsBusy = false;
             //var ItemsSQLITE = await GetAllNewsSQLITE();
 
             //if (!ItemsSQLITE.Any())
