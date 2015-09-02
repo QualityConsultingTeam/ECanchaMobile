@@ -1,11 +1,4 @@
-﻿using EC.Client.Core.Infrastructure;
-using EC.Client.Core.ServiceAgents;
-using EC.Forms.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using EC.Forms.ViewModels;
 
 using Xamarin.Forms;
 

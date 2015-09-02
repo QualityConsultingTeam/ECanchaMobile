@@ -1,5 +1,5 @@
 ﻿
-namespace EC.Client.Core.ServiceAgents
+namespace EC.ServiceAgents
 {
     using DocumentResponse;
     using Interfaces;

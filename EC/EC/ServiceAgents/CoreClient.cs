@@ -1,10 +1,10 @@
-﻿//using EC.Client.Core.Infrastructure.Abstractions.Services;
-//using EC.Client.Core.Messages;
-using EC.Client.Core.Infrastructure.Abstractions.Services;
-using EC.Client.Core.ServiceAgents.Interfaces;
+﻿//using EC.Infrastructure.Abstractions.Services;
+//using EC.Messages;
+using EC.Infrastructure.Abstractions.Services;
+using EC.ServiceAgents.Interfaces;
 using System;
 
-namespace EC.Client.Core.ServiceAgents
+namespace EC.ServiceAgents
 {
     public class CoreClient : ICoreClient
     {

@@ -1,4 +1,4 @@
-﻿namespace EC.Client.Core.Infrastructure.Abstractions.Services
+﻿namespace EC.Infrastructure.Abstractions.Services
 {
     public interface IApplicationStorageService
     {

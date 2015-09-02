@@ -1,4 +1,4 @@
-﻿namespace EC.Client.Core.Web
+﻿namespace EC.Web
 {
     using System;
     using System.Net.Http;

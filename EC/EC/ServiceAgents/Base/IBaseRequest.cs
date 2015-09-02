@@ -1,4 +1,4 @@
-﻿namespace EC.Client.Core.Web
+﻿namespace EC.Web
 {
     /// <summary>
     /// Base request interface
