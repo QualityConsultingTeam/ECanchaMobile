@@ -49,7 +49,6 @@
     <Compile Include="Infrastructure\ApplicationSettingServiceSingleton.cs" />
     <Compile Include="Infrastructure\ApplicationStorageService.cs" />
     <Compile Include="Infrastructure\LocationServiceSingleton.cs" />
-    <Compile Include="Interfaces\IDownloader.cs" />
     <Compile Include="Messages\ReloadDataMessage.cs" />
     <Compile Include="Model\Enums\RideDetailWorkflow.cs" />
     <Compile Include="Model\GroupRide.cs" />

@@ -21,12 +21,12 @@ namespace EC.Forms.Views
             this.BindingContext = new FieldsViewModel(this);
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
+        //protected override void OnAppearing()
+        //{
+        //    base.OnAppearing();
 
-            ((FieldsViewModel)this.BindingContext).LoadData();
-        }
+        //    ((FieldsViewModel)this.BindingContext).LoadData();
+        //}
 
     }
 }
