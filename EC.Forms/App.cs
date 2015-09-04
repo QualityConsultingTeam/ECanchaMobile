@@ -30,10 +30,10 @@ namespace EC.Forms
             //    }
             //};
           
-            MainPage = new NavigationPage(new FieldView())
+            MainPage = new NavigationPage(new FieldsView())
             {
-                BarBackgroundColor = Color.FromHex("cb1f24"),
-                BarTextColor = Color.White,
+                //BarBackgroundColor = Color.FromHex("cb1f24"),
+                //BarTextColor = Color.White,
                 
             };
 

@@ -5,7 +5,7 @@ namespace EC.Forms
     {
 
 
-        public const string NavigationBarBackgroundHex = "#F7F5F6";
+        public const string NavigationBarBackgroundHex = "#009688";
         public const string BorderColorHex = "#B2B2B2";
         public const string RedColorHex = "#de1e24";
         public const string WhiteColorHex = "#FFF";

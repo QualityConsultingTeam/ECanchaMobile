@@ -38,12 +38,12 @@
             </Grid.ColumnDefinitions>
 
             <StackLayout BackgroundColor="{x:Static Constant:Constants.NavigationBarBackgroundColor}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="51" Padding="0,10,0,0" >
-                <local:LabelRender Text="{x:Static Constant:TextConstant.FieldsTitle}" TextColor="{x:Static Constant:Constants.RedColorHex}" FontSize="20"
+                <local:LabelRender Text="{x:Static Constant:TextConstant.FieldsTitle}" TextColor="Gray" FontSize="16"
                      VerticalOptions="CenterAndExpand" HorizontalOptions="Center" />
                 <StackLayout BackgroundColor="{x:Static Constant:Constants.BorderColor}" HeightRequest="1"/>
             </StackLayout>
 
-            <local:ButtonTextCentered 
+            <!--<local:ButtonTextCentered 
               Text="{x:Static Constant:TextConstant.FieldsViewTitle}"
               BackgroundColor="{Binding Tab1BackgroundColor}" TextColor="{Binding Tab1TextColor}"
               Command="{Binding Tab1Command}" Grid.Column="0" Grid.Row="1" />
@@ -51,51 +51,49 @@
             <local:ButtonTextCentered 
                Text="{x:Static Constant:TextConstant.CentersViewTitle}"
                BackgroundColor="{Binding Tab2BackgroundColor}" TextColor="{Binding Tab2TextColor}"
-              Command="{Binding Tab2Command}" Grid.Column="1" Grid.Row="1" />
+              Command="{Binding Tab2Command}" Grid.Column="1" Grid.Row="1" />-->
 
             <StackLayout Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="{x:Static Constant:Constants.BorderColor}"/>
 
             <ListView x:Name="ListView" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"
-                BackgroundColor="White" HasUnevenRows="True" IsVisible="{Binding IsTab1Selected}"
-                ItemsSource="{Binding FieldsCollection}"   >
+                BackgroundColor="White" HasUnevenRows="True"  
+                ItemsSource="{Binding FieldsCollection}" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <local:MyViewCell>
                             <local:MyViewCell.View>
-                                <StackLayout Orientation="Vertical" Padding="10" BackgroundColor="White">
-
-                                    <Grid ColumnSpacing="-5">
+                                <Grid Padding="10" BackgroundColor="White"> 
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
 
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="*"></RowDefinition>
-                                            <RowDefinition Height="*"></RowDefinition>
-                                            <RowDefinition Height="Auto"></RowDefinition>
-                                            <RowDefinition Height="Auto"></RowDefinition>
-                                            <RowDefinition Height="*"></RowDefinition>
-                                        </Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
 
-                                        <Image Grid.Column="0"  Grid.Row="0" Grid.RowSpan="5" Source="{Binding TypeOfNews}">
+                                    </Grid.RowDefinitions>
+                                        <Image Grid.Column="0"  Grid.Row="0" Grid.RowSpan="5" Source="{Binding Center.FieldPicure}">
                                             <Image.WidthRequest>
                                                 <OnPlatform x:TypeArguments="x:Double"  iOS="80" Android="125" />
                                             </Image.WidthRequest>
                                         </Image>
 
-                                        <local:LabelRender Grid.Column="1" Grid.Row="2" Text="{Binding Name}" TextColor="Gray"/>
+                                    <!--<local:LabelRender Grid.Row="0" Grid.Column="1"   Text="{Binding Name}"  TextColor="Gray" FontSize="20"/>
 
-                                        <local:LabelRender Grid.Column="1" Grid.Row="3" Text="{Binding Title}" TextColor="{x:Static Constant:Constants.RedColorHex}" FontSize="18"/>
+                                    <local:LabelRender Grid.Row="1" Grid.Column="1"  Text="{Binding Center.Location}" TextColor="Gray" FontSize="16"/>
+                                    <local:LabelRender  Grid.Row="2" Grid.Column="1" Text="{Binding Distance}" TextColor="Gray" FontSize="18"/>-->-->
+                                           
 
-                                    </Grid>
-
-                                    <Image Source="{Binding NewsImage}"/>
-
-                                    <StackLayout Padding="20">
-                                        <local:LabelRender VerticalOptions="Center" HorizontalOptions="Center" Text="{Binding Detail}" TextColor="Gray"/>
-                                    </StackLayout>
-                                </StackLayout>
+                                    
+                                    <!--<StackLayout  Orientation="Horizontal" Padding="5" Grid.Row="2" Grid.Column="1">
+                                        <local:LabelRender Text="{Binding Lawn}"    TextColor="Gray"/>
+                                        <local:LabelRender Text="{Binding Shoes}"    TextColor="Gray"/>
+                                    </StackLayout>-->
+                                </Grid>
                             </local:MyViewCell.View>
                         </local:MyViewCell>
                     </DataTemplate>

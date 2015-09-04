@@ -35,7 +35,7 @@ namespace EC.Forms.ViewModels
         }
 
 
-        public Command GetLatestNewsCommand
+        public Command RefreshFieldsCommand
         {
             get
             {
@@ -94,7 +94,17 @@ namespace EC.Forms.ViewModels
  
         #region Private Fields
 
-        private List<Field> _fields;
+        private List<Field> _fields = new List<Field>();
+
+        private void LoadTestData()
+        {
+            var fields = new List<Field>()
+            {
+
+            };
+
+            
+        }
 
         #endregion
 
