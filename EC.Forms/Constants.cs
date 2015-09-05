@@ -6,11 +6,18 @@ namespace EC.Forms
 
 
         public const string NavigationBarBackgroundHex = "#009688";
-        public const string BorderColorHex = "#B2B2B2";
-        public const string RedColorHex = "#de1e24";
+        public const string BorderColorHex = "#B2DFDB";
+        public const string RedColorHex = "#00796B";
         public const string WhiteColorHex = "#FFF";
         public const string GreyColorHex = "#808080";
 
+        public const string PrimaryColor = "#009688";
+        public const string PrimaryDarkColor = "#00796B";
+        public const string PrimaryLight = "#B2DFDB";
+        public const string Accent = "#795548";
+        public const string PrimaryText = "#727272";
+        public const string Icons = "#FFFFFF";
+        public const string Divider = "#B6B6B6";
 
 
         public static Color NavigationBarBackgroundColor = Color.FromHex(NavigationBarBackgroundHex);

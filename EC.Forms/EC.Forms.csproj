@@ -47,9 +47,6 @@
     <Compile Include="Views\CustomControls\CustomEntry.cs" />
     <Compile Include="Views\CustomControls\CustomWebView.cs" />
     <Compile Include="Views\CustomControls\NavigationBarView.cs" />
-    <Compile Include="Views\FieldsView.xaml.cs">
-      <DependentUpon>FieldsView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\FieldView.xaml.cs">
       <DependentUpon>FieldView.xaml</DependentUpon>
     </Compile>
@@ -77,12 +74,6 @@
       <Project>{e0934903-f647-4a58-8811-513d65d725bd}</Project>
       <Name>EC</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Views\FieldsView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\FieldView.xaml">
