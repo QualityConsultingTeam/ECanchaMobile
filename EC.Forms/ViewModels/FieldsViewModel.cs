@@ -1,6 +1,6 @@
-﻿using EC.Client.Core.DocumentResponse;
-using EC.Client.Core.Infrastructure.Abstractions.Services;
-using EC.Client.Core.ServiceAgents.Interfaces;
+﻿using EC.DocumentResponse;
+using EC.Infrastructure.Abstractions.Services;
+using EC.ServiceAgents.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,12 +39,14 @@ namespace EC.Forms.ViewModels
         {
             get
             {
-                return UpdateNewsCommand ??
-                    (UpdateNewsCommand = new Command(async ()=> await GetFieldsFromApiAsync(), () => { return !IsBusy; }));
+                return _RefreshFieldsCommand ??
+                    (_RefreshFieldsCommand =
+                    new Command(async () => await GetFieldsFromApiAsync(),
+                    () => { return !IsBusy; }));
             }
         }
 
-        private Command UpdateNewsCommand;
+      
 
 
 
@@ -83,28 +85,25 @@ namespace EC.Forms.ViewModels
         {
             if (IsBusy) return;
             IsBusy = true;
-            FieldsCollection = await CoreClient.FieldsService.GetFields(new FilterOptionModel() { });
+            //var location = await DependencyService.Get<ILocationServiceSingleton>()
+            //    .CalculatePositionAsync();
+
+            var filter = new FilterOptionModel() { date = DateTime.Now };
+
+            FieldsCollection = await CoreClient.FieldsService.GetFields(filter);
             IsBusy = false;
         }
 
-   
+
 
         #endregion
-         
- 
+
+
         #region Private Fields
 
         private List<Field> _fields = new List<Field>();
 
-        private void LoadTestData()
-        {
-            var fields = new List<Field>()
-            {
-
-            };
-
-            
-        }
+        private Command _RefreshFieldsCommand = null;
 
         #endregion
 

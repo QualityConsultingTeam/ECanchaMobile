@@ -1,5 +1,5 @@
 ﻿
-namespace EC.Client.Core.ServiceAgents
+namespace EC.ServiceAgents
 {
     using DocumentResponse;
     using Interfaces;
@@ -12,6 +12,8 @@ namespace EC.Client.Core.ServiceAgents
         Task<List<Field>> GetFields();
 
         Task<List<Field>> GetFields(FilterOptionModel filter);
+
+        Task<List<Field>> GetFields(string keywords, string lat, string lon);
        
     }
 }

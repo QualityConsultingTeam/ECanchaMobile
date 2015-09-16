@@ -1,5 +1,5 @@
-﻿using EC.Client.Core.Infrastructure;
-using EC.Client.Core.ServiceAgents;
+﻿using EC.Infrastructure;
+using EC.ServiceAgents;
 using EC.Forms.ViewModels;
 using System;
 using System.Collections.Generic;

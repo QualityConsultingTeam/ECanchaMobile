@@ -1,8 +1,8 @@
-﻿using EC.Client.Core.Infrastructure;
-using EC.Client.Core.Infrastructure.Abstractions.Repositories;
-using EC.Client.Core.Infrastructure.Abstractions.Services;
-using EC.Client.Core.ServiceAgents;
-using EC.Client.Core.ServiceAgents.Interfaces;
+﻿using EC.Infrastructure;
+using EC.Infrastructure.Abstractions.Repositories;
+using EC.Infrastructure.Abstractions.Services;
+using EC.ServiceAgents;
+using EC.ServiceAgents.Interfaces;
 using EC.Forms.Infrastructure;
 using EC.Forms.Views;
 using System;
