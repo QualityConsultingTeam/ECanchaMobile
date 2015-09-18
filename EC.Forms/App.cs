@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Xamarin.Forms;
 
 namespace EC.Forms
@@ -37,7 +36,7 @@ namespace EC.Forms
                 
             };
 
-            MainPage.Title = "En la Cancha App";
+            MainPage.Title = "En la Cancha";
         }
 
         protected override void OnStart()

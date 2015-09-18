@@ -6,19 +6,21 @@
              x:Class="EC.Forms.Views.FieldView">
 
     <StackLayout Orientation="Vertical">
-        <StackLayout BackgroundColor="{x:Static Constant:Constants.NavigationBarBackgroundColor}"   HeightRequest="51" Padding="0,10,0,0" >
+        <!--<StackLayout BackgroundColor="{x:Static Constant:Constants.NavigationBarBackgroundColor}"   HeightRequest="51" Padding="0,10,0,0" >
             <local:LabelRender Text="{x:Static Constant:TextConstant.FieldsTitle}" TextColor="White" FontSize="16"
                      VerticalOptions="CenterAndExpand" HorizontalOptions="Center" />
             <StackLayout BackgroundColor="{x:Static Constant:Constants.BorderColor}" HeightRequest="1"/>
-        </StackLayout>
-        <!--IsPullToRefreshEnabled="True"
-              RefreshCommand="{Binding RefreshFieldsCommand}"
-              IsRefreshing="{Binding IsBusy, Mode=OneWay}"-->
+        </StackLayout>-->
+         <ActivityIndicator IsVisible="{Binding IsBusyActivity}" IsRunning="{Binding IsBusyActivity}" Color="Green"/>
 
         <ListView x:Name="listView"
               ItemsSource="{Binding FieldsCollection}"
-              HasUnevenRows="True"
-              BackgroundColor="White">
+              HasUnevenRows="true"
+              IsPullToRefreshEnabled="true"
+              RefreshCommand="{Binding RefreshFieldsCommand}"
+              IsRefreshing ="{Binding IsBusy,Mode=OneWay}"
+              BackgroundColor="White"
+              SeparatorVisibility="Default" SeparatorColor="Gray">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -41,9 +43,7 @@
                                 </Image.HeightRequest>
                             </Image>
 
-                            <StackLayout
-                           Spacing="4"  Grid.Column="1"
-                           VerticalOptions="Center">
+                            <StackLayout Spacing="4"  Grid.Column="1" VerticalOptions="Center">
                                 <Label Text="{Binding Name}" FontSize="Large" LineBreakMode="WordWrap"/>
                                 <Label Text="{Binding Distance}" TextColor="#3498DB" FontSize="Small" LineBreakMode="NoWrap"/>
                                 <Label Text="{Binding Center.Name}" FontSize="Medium" LineBreakMode="WordWrap"/>

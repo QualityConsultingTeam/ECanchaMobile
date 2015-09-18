@@ -18,15 +18,23 @@ namespace EC.Forms.Views
             InitializeComponent();
             // this.BindingContext = new FieldsViewModel(this);
 
-            this.BindingContext = new FieldsViewModel(this);
+            this.BindingContext = new FieldsViewModel(this.Navigation);
         }
 
-        //protected override void OnAppearing()
-        //{
-        //    base.OnAppearing();
 
-        //    ((FieldsViewModel)this.BindingContext).LoadData();
-        //}
+        private FieldsViewModel ViewModel
+        {
+            get { return this.BindingContext as FieldsViewModel; }
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (ViewModel.FieldsCollection.Any()) return;
+
+            Task.Run(async () => await ViewModel.GetFieldsFromApiAsync());
+        }
 
     }
 }

@@ -21,7 +21,7 @@ namespace EC.Forms
 
 
         public static Color NavigationBarBackgroundColor = Color.FromHex(NavigationBarBackgroundHex);
-        public static Color BorderColor = Color.FromHex(BorderColorHex);
+        public static Color BorderColor = Color.Silver; // Color.FromHex(BorderColorHex);
         public static Color RedColor = Color.FromHex(RedColorHex);
         public static Color WhiteColor = Color.FromHex(WhiteColorHex);
         public static Color GreyColor = Color.FromHex(GreyColorHex);
@@ -35,6 +35,6 @@ namespace EC.Forms
         public static string FieldsViewTitle = "Canchas";
         public static string CentersViewTitle = "Conmplejos";
         public static string Wait = "Por Favor Espere";
-        public static string FieldsTitle = "En La Cancha";
+        public static string FieldsTitle = "EN LA CANCHA";
     }
 }
