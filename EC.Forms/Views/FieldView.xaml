@@ -24,7 +24,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid Padding="10">
+                        <Grid  Padding="5,5,5,5">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
@@ -44,12 +44,12 @@
                             </Image>
 
                             <StackLayout Spacing="4"  Grid.Column="1" VerticalOptions="Center">
-                                <Label Text="{Binding Name}" FontSize="Large" LineBreakMode="WordWrap"/>
-                                <Label Text="{Binding Distance}" TextColor="#3498DB" FontSize="Small" LineBreakMode="NoWrap"/>
+                                <Label Text="{Binding Name}" FontSize="Large"  TextColor="Black" LineBreakMode="WordWrap"/>
+                                <Label Text="{Binding Distance}" TextColor="Black" FontSize="Small" LineBreakMode="NoWrap"/>
                                 <Label Text="{Binding Center.Name}" FontSize="Medium" LineBreakMode="WordWrap"/>
-                                <Label Text="{Binding Field.Lawn}" FontSize="Small" LineBreakMode="WordWrap"/>
-                                <Label Text="{Binding Field.Shoes}" FontSize="Small" LineBreakMode="WordWrap"/>
-                                <Label Text="{Binding Field.Type}" FontSize="Small" LineBreakMode="WordWrap"/>
+                                <Label Text="{Binding Lawn}" FontSize="Small" LineBreakMode="WordWrap"/>
+                                <Label Text="{Binding Shoes}" FontSize="Small" LineBreakMode="WordWrap"/>
+                                <Label Text="{Binding Type}" FontSize="Small" LineBreakMode="WordWrap"/>
                             </StackLayout> 
                             
                             

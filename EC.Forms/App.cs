@@ -31,8 +31,8 @@ namespace EC.Forms
           
             MainPage = new NavigationPage(new FieldView())
             {
-                //BarBackgroundColor = Color.FromHex("cb1f24"),
-                //BarTextColor = Color.White,
+                BarBackgroundColor = Constants.NavigationBarBackgroundColor,
+                BarTextColor = Color.White,
                 
             };
 
