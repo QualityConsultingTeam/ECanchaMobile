@@ -254,6 +254,9 @@
     <AndroidResource Include="Resources\drawable-hdpi\Chipotle.png" />
     <AndroidResource Include="Resources\drawable-hdpi\dome.png" />
     <AndroidResource Include="Resources\drawable-hdpi\face.png" />
+    <AndroidResource Include="Resources\drawable\ic_menu_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_menu_black_18dp.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_menu_black_18dp.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\EC.Forms\EC.Forms.csproj">

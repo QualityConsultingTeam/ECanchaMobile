@@ -172,7 +172,7 @@ namespace EC.Forms
                 {
                     Setters = {
                         new Setter { Property = Page.BackgroundColorProperty, Value = BaseColor },
-                        new Setter { Property = Page.IconProperty, Value = "settings.png" },
+                        new Setter { Property = Page.IconProperty, Value = "ic_menu_black_18dp.png" },
                         new Setter { Property = Page.TitleProperty, Value = "Settings" }
                     }
                 };

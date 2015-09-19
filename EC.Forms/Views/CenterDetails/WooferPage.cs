@@ -25,8 +25,8 @@ namespace EC.Forms.Views
 			var backgroundImage = new Image () {
 				Source = new FileImageSource () { File = "southmountain.jpg" },
 				Aspect = Aspect.AspectFill,
-				IsOpaque = true,
-				Opacity = 0.8,
+				//IsOpaque = true,
+				//Opacity = 0.8,
 			};
 
 			var shader = new BoxView () {
@@ -212,8 +212,8 @@ namespace EC.Forms.Views
             {
                 Source = new FileImageSource() { File = "Chipotle.jpg" },
                 Aspect = Aspect.AspectFill,
-                IsOpaque = true,
-                Opacity = 0.8,
+                //IsOpaque = true,
+                //Opacity = 0.8,
             };
 
             var shader = new BoxView()
@@ -224,6 +224,8 @@ namespace EC.Forms.Views
             var face = new CircleImage()
             {
                 Aspect = Aspect.AspectFill,
+                BorderColor = Color.Green,
+                BorderThickness = 10,
                 Source = new FileImageSource() { File = "fashionbg.png" }
             };
 

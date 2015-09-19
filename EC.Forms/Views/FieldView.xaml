@@ -4,6 +4,7 @@
              xmlns:local="clr-namespace:EC.Forms.Views;assembly=EC.Forms"
              xmlns:Constant="clr-namespace:EC.Forms;assembly=EC.Forms"
              xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             xmlns:Custom="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              x:Class="EC.Forms.Views.FieldView">
 
     <StackLayout Orientation="Vertical">
@@ -29,6 +30,7 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
+                              <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
@@ -41,15 +43,33 @@
                                                TextColor="Black" 
                                                VerticalOptions="CenterAndExpand" 
                                                HorizontalOptions="CenterAndExpand"   />
-                          
-                              <Image Grid.Column="0" Grid.Row="1"    Source="{Binding Center.FieldPicure}">
+
+                          <Custom:CircleImage Source="{Binding Center.FieldPicure}"
+                                              BorderThickness="7" BorderColor="Green" 
+                                              Grid.Row="1">
+                            <Custom:CircleImage.WidthRequest>
+                              <OnPlatform x:TypeArguments="x:Double">
+                                
+                                <OnPlatform.Android>120 </OnPlatform.Android>
+                                
+                              </OnPlatform>
+                            </Custom:CircleImage.WidthRequest>
+                            <Custom:CircleImage.HeightRequest>
+                              <OnPlatform x:TypeArguments="x:Double">
+                                <OnPlatform.iOS>55</OnPlatform.iOS>
+                                <OnPlatform.Android>120</OnPlatform.Android>
+                                <OnPlatform.WinPhone>75</OnPlatform.WinPhone>
+                              </OnPlatform>
+                            </Custom:CircleImage.HeightRequest>
+                          </Custom:CircleImage>
+                          <!--<Image Grid.Column="0" Grid.Row="1"    Source="{Binding Center.FieldPicure}">
                                 <Image.WidthRequest>
                                     <OnPlatform x:TypeArguments="x:Double"  iOS="80" Android="125" />
                                 </Image.WidthRequest>
                                 <Image.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double" iOS="80"  Android="125" />
                                 </Image.HeightRequest>
-                            </Image>
+                            </Image>-->
                           
                             <StackLayout Spacing="4"  Grid.Column="1" Grid.Row="1" VerticalOptions="Center">
                                 <!--<Label Text="{Binding Name}" FontSize="Large"  TextColor="Black" LineBreakMode="WordWrap"/>-->
@@ -59,10 +79,26 @@
                                 <Label Text="{Binding Shoes}" FontSize="Small" LineBreakMode="WordWrap"/>
                                 <Label Text="{Binding Type}" FontSize="Small" LineBreakMode="WordWrap"/>
                                 
-                            </StackLayout> 
-                            
-                            
-                        </Grid>
+                            </StackLayout>
+
+                          <StackLayout Orientation="Horizontal" 
+                                       Grid.Row="3" Spacing="4" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand">
+                            <Button Text="13:00" BackgroundColor="Teal" ></Button>
+                            <Button Text="14:00" BackgroundColor="Teal" ></Button>
+                            <Button Text="15:00" BackgroundColor="Teal" ></Button>
+                            <Button Text="16:00" BackgroundColor="Teal" ></Button>
+                            <!--<controls:ImageButton BackgroundColor="Green" 
+                                                  TextColor="#ffffff" 
+                                                  HeightRequest="75" WidthRequest="75" Image="hours.png" Orientation="ImageToLeft"  ImageHeightRequest="50" ImageWidthRequest="50"  Text="13:00"/> />-->
+                            <!--<controls:ImageButton BackgroundColor="#01abdf"
+                            TextColor="#ffffff"
+                            HeightRequest="75" WidthRequest="75" Image="hours.png" Orientation="ImageToLeft"  ImageHeightRequest="50" ImageWidthRequest="50"  Text="14:00"/> />
+                            <controls:ImageButton BackgroundColor="#01abdf"
+                                                  TextColor="#ffffff"
+                                                  HeightRequest="75" WidthRequest="75" Image="hours.png" Orientation="ImageToLeft"  ImageHeightRequest="50" ImageWidthRequest="50"  Text="15:00"/> />-->
+                          </StackLayout>
+                        
+                      </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
