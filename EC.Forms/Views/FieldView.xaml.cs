@@ -19,21 +19,26 @@ namespace EC.Forms.Views
             // this.BindingContext = new FieldsViewModel(this);
 
             this.BindingContext = new FieldsViewModel(this.Navigation);
+            listView.ItemSelected += ListView_ItemSelected;
         }
 
+        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            ViewModel.GoToDetailsCommand.Execute(null);
+        }
 
         private FieldsViewModel ViewModel
         {
             get { return this.BindingContext as FieldsViewModel; }
         }
 
-        protected override void OnAppearing()
+        protected override   void OnAppearing()
         {
             base.OnAppearing();
 
             if (ViewModel.FieldsCollection.Any()) return;
 
-            Task.Run(async () => await ViewModel.GetFieldsFromApiAsync());
+             Task.Run(async ()=> await ViewModel.GetFieldsFromApiAsync());
         }
 
     }

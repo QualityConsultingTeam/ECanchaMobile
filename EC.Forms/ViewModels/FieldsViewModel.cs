@@ -1,4 +1,5 @@
 ﻿using EC.DocumentResponse;
+using EC.Forms.Views;
 using EC.Infrastructure.Abstractions.Services;
 using EC.ServiceAgents;
 using EC.ServiceAgents.Interfaces;
@@ -47,10 +48,21 @@ namespace EC.Forms.ViewModels
             {
                 return _RefreshFieldsCommand ??
                     (_RefreshFieldsCommand = new Command(async () => await GetFieldsFromApiAsync(),
-                    () => { return !IsBusy; }));
+                    ()=> !IsBusy));
             }
         }
-         
+        
+        public Command GoToDetailsCommand
+        {
+            get
+            {
+                return _goToDetailsCommand ??
+                    (_goToDetailsCommand = new Command(() =>
+                        {
+                            this.Navigation.PushAsync(new CenterDetail());
+                        }));
+            }
+        }
 
         #endregion
 
@@ -96,13 +108,13 @@ namespace EC.Forms.ViewModels
 
 
         #endregion
-
-
+        
         #region Private Fields
 
         private ObservableCollection<Field> _fields = new ObservableCollection<Field>();
 
         private Command _RefreshFieldsCommand = null;
+        private Command _goToDetailsCommand = null;
         private bool isBusy;
         private bool _isBusyActivity;
         #endregion

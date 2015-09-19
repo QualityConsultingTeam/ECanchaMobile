@@ -28,14 +28,8 @@ namespace EC.Forms
             //        }
             //    }
             //};
-
-            MainPage = new NavigationPage(new FieldView())
-            {
-                BarBackgroundColor = Constants.NavigationBarBackgroundColor,
-                BarTextColor = Color.White,
-
-            };
-            //MainPage = new MasterView();
+            
+            MainPage = new MasterView();
             MainPage.Title = "En la Cancha";
         }
 

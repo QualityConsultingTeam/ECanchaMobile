@@ -12,10 +12,17 @@ namespace EC.Forms.Views
         public MasterView()
         {
             Title = "EN LA CANCHA";
+            
+
+           Detail = new NavigationPage(new FieldView())
+           {
+               BarBackgroundColor = Constants.NavigationBarBackgroundColor,
+               BarTextColor = Color.White,
+
+           };
+
             Master = new SettingsPage();
 
-           Detail =new NavigationPage( new FieldView());
-            
         }
     }
 
@@ -24,7 +31,7 @@ namespace EC.Forms.Views
         public SettingsPage()
         {
             Style = AppStyle.SettingsPageStyle;
-
+            Title = "Test";
             var pageTitle = new Frame()
             {
                 Style = AppStyle.PageTitleLabelFrameStyle,
