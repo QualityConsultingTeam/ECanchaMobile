@@ -1,12 +1,11 @@
-﻿using EC.Client.Core.Infrastructure;
-using EC.Client.Core.ServiceAgents;
+﻿using EC.Infrastructure;
+using EC.ServiceAgents;
 using EC.Forms.Infrastructure;
 using EC.Forms.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Xamarin.Forms;
 
 namespace EC.Forms
@@ -32,12 +31,12 @@ namespace EC.Forms
           
             MainPage = new NavigationPage(new FieldView())
             {
-                //BarBackgroundColor = Color.FromHex("cb1f24"),
-                //BarTextColor = Color.White,
+                BarBackgroundColor = Constants.NavigationBarBackgroundColor,
+                BarTextColor = Color.White,
                 
             };
 
-            MainPage.Title = "En la Cancha App";
+            MainPage.Title = "En la Cancha";
         }
 
         protected override void OnStart()

@@ -1,6 +1,6 @@
-﻿namespace EC.Client.Core.ServiceAgents
+﻿namespace EC.ServiceAgents
 {
-    using EC.Client.Core.DocumentResponse;
+    using EC.DocumentResponse;
     using Interfaces;
     using System;
     using System.Collections.Generic;
@@ -32,5 +32,12 @@
             return await base.PostAsync<FilterOptionModel,List<Field>>(url,filter);
         }
 
+        public async Task<List<Field>> GetFields(string keywords, string lat, string lon)
+        {
+            string url = String.Format(CultureInfo.InvariantCulture
+              , "{0}/api/canchas?keywords={1}", _urlPrefix, keywords);
+
+            return await base.GetAsync<List<Field>>(url);
+        }
     }
 }

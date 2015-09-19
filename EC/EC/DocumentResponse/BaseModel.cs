@@ -1,6 +1,6 @@
 ﻿
 
-namespace EC.Client.Core.DocumentResponse
+namespace EC.DocumentResponse
 {
     using System;
     using System.Collections.Generic;

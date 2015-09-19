@@ -1,10 +1,10 @@
 ﻿//using Cirrious.MvvmCross.Plugins.Messenger;
-using EC.Client.Core.Infrastructure.Abstractions.Repositories;
-using EC.Client.Core.Infrastructure.Abstractions.Services;
-using EC.Client.Core.Messages;
+using EC.Infrastructure.Abstractions.Repositories;
+using EC.Infrastructure.Abstractions.Services;
+using EC.Messages;
 using System;
 
-namespace EC.Client.Core.Infrastructure
+namespace EC.Infrastructure
 {
     public class ApplicationSettingServiceSingleton : IApplicationSettingServiceSingleton
     {

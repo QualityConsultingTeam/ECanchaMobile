@@ -1,5 +1,5 @@
 ﻿//using Microsoft.WindowsAzure.MobileServices;
-namespace EC.Client.Core.Settings
+namespace EC.Settings
 {
     public static class CommonAppSettings
     {

@@ -1,5 +1,5 @@
-﻿using EC.Client.Core.Infrastructure;
-using EC.Client.Core.ServiceAgents;
+﻿using EC.Infrastructure;
+using EC.ServiceAgents;
 using EC.Forms.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -18,15 +18,23 @@ namespace EC.Forms.Views
             InitializeComponent();
             // this.BindingContext = new FieldsViewModel(this);
 
-            this.BindingContext = new FieldsViewModel(this);
+            this.BindingContext = new FieldsViewModel(this.Navigation);
         }
 
-        //protected override void OnAppearing()
-        //{
-        //    base.OnAppearing();
 
-        //    ((FieldsViewModel)this.BindingContext).LoadData();
-        //}
+        private FieldsViewModel ViewModel
+        {
+            get { return this.BindingContext as FieldsViewModel; }
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (ViewModel.FieldsCollection.Any()) return;
+
+            Task.Run(async () => await ViewModel.GetFieldsFromApiAsync());
+        }
 
     }
 }

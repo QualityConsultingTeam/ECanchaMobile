@@ -1,4 +1,4 @@
-﻿using EC.Client.Core.Infrastructure.Abstractions.Repositories;
+﻿using EC.Infrastructure.Abstractions.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
+
 namespace EC.Droid
 {
     [Activity(Label = "EC", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -18,6 +19,7 @@ namespace EC.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new EC.Forms.App());
+            
         }
     }
 }

@@ -1,24 +1,26 @@
-﻿using EC.Client.Core.DocumentResponse;
-using EC.Client.Core.Infrastructure.Abstractions.Services;
-using EC.Client.Core.ServiceAgents.Interfaces;
+﻿using EC.DocumentResponse;
+using EC.Infrastructure.Abstractions.Services;
+using EC.ServiceAgents;
+using EC.ServiceAgents.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using XLabs.Forms.Mvvm;
 
 namespace EC.Forms.ViewModels
 {
     
-    public class FieldsViewModel : BaseTabbedViewModel
+    public class FieldsViewModel : ViewModelBase
     {
 
-        public FieldsViewModel(Page currentPage)
-            : base(currentPage)
+        public FieldsViewModel(INavigation navigation)
         {
-            FetchInBackground();
+            this.Navigation = new ViewModelNavigation(navigation);
         }
          
     
@@ -29,40 +31,38 @@ namespace EC.Forms.ViewModels
             get { return isBusy; }
             set
             {
-                isBusy = value;
-                OnPropertyChange();
+                SetProperty(ref isBusy,value);
             }
         }
 
+        public bool IsBusyActivity
+        {
+            get { return _isBusyActivity; }
+            set { SetProperty(ref _isBusyActivity, value); }
+        }
 
         public Command RefreshFieldsCommand
         {
             get
             {
-                return UpdateNewsCommand ??
-                    (UpdateNewsCommand = new Command(async ()=> await GetFieldsFromApiAsync(), () => { return !IsBusy; }));
+                return _RefreshFieldsCommand ??
+                    (_RefreshFieldsCommand = new Command(async () => await GetFieldsFromApiAsync(),
+                    () => { return !IsBusy; }));
             }
         }
-
-        private Command UpdateNewsCommand;
-
-
-
-      
-        private bool isBusy;
+         
 
         #endregion
 
 
         #region ListView Data Source
 
-        public List<Field> FieldsCollection
+        public ObservableCollection<Field> FieldsCollection
         {
             get { return _fields; }
             set
             {
-                _fields = value;
-                OnPropertyChange();
+                SetProperty(ref _fields, value);
             }
         }
 
@@ -79,33 +79,32 @@ namespace EC.Forms.ViewModels
         /// Load Data From web api
         /// </summary>
         /// <returns></returns>
-        private async Task GetFieldsFromApiAsync()
+        public async Task GetFieldsFromApiAsync()
         {
             if (IsBusy) return;
             IsBusy = true;
-            FieldsCollection = await CoreClient.FieldsService.GetFields(new FilterOptionModel() { });
+            //var location = await DependencyService.Get<ILocationServiceSingleton>()
+            //    .CalculatePositionAsync();
+
+            var filter = new FilterOptionModel() { date = DateTime.Now };
+
+            var collection= await CoreClient.FieldsService.GetFields(filter);
+            FieldsCollection = new ObservableCollection<Field>(collection);
             IsBusy = false;
         }
 
-   
+
 
         #endregion
-         
- 
+
+
         #region Private Fields
 
-        private List<Field> _fields = new List<Field>();
+        private ObservableCollection<Field> _fields = new ObservableCollection<Field>();
 
-        private void LoadTestData()
-        {
-            var fields = new List<Field>()
-            {
-
-            };
-
-            
-        }
-
+        private Command _RefreshFieldsCommand = null;
+        private bool isBusy;
+        private bool _isBusyActivity;
         #endregion
 
 
