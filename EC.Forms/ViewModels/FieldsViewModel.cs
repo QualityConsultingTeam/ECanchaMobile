@@ -59,14 +59,14 @@ namespace EC.Forms.ViewModels
                 return _goToDetailsCommand ??
                     (_goToDetailsCommand = new Command(() =>
                         {
-                            this.Navigation.PushAsync(new CenterDetail());
+                            this.Navigation.PushAsync(new CustomCarrousel());
                         }));
             }
         }
 
         #endregion
 
-
+        
         #region ListView Data Source
 
         public ObservableCollection<Field> FieldsCollection

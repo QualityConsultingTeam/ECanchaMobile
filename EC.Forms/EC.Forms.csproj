@@ -44,6 +44,9 @@
     <Compile Include="Views\CenterDetail.xaml.cs">
       <DependentUpon>CenterDetail.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CenterDetails\DetailsView.cs" />
+    <Compile Include="Views\CenterDetails\SlideShowView.cs" />
+    <Compile Include="Views\CenterDetails\WooferPage.cs" />
     <Compile Include="Views\CustomControls\AlertView.cs" />
     <Compile Include="Views\CustomControls\CustomEntry.cs" />
     <Compile Include="Views\CustomControls\CustomWebView.cs" />
