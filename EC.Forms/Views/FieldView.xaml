@@ -87,15 +87,7 @@
                             <Button Text="14:00" BackgroundColor="Teal" ></Button>
                             <Button Text="15:00" BackgroundColor="Teal" ></Button>
                             <Button Text="16:00" BackgroundColor="Teal" ></Button>
-                            <!--<controls:ImageButton BackgroundColor="Green" 
-                                                  TextColor="#ffffff" 
-                                                  HeightRequest="75" WidthRequest="75" Image="hours.png" Orientation="ImageToLeft"  ImageHeightRequest="50" ImageWidthRequest="50"  Text="13:00"/> />-->
-                            <!--<controls:ImageButton BackgroundColor="#01abdf"
-                            TextColor="#ffffff"
-                            HeightRequest="75" WidthRequest="75" Image="hours.png" Orientation="ImageToLeft"  ImageHeightRequest="50" ImageWidthRequest="50"  Text="14:00"/> />
-                            <controls:ImageButton BackgroundColor="#01abdf"
-                                                  TextColor="#ffffff"
-                                                  HeightRequest="75" WidthRequest="75" Image="hours.png" Orientation="ImageToLeft"  ImageHeightRequest="50" ImageWidthRequest="50"  Text="15:00"/> />-->
+                           
                           </StackLayout>
                         
                       </Grid>

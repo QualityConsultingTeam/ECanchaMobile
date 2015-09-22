@@ -31,7 +31,7 @@ namespace EC.Forms.Views
         public SettingsPage()
         {
             Style = AppStyle.SettingsPageStyle;
-            Title = "Test";
+            Title = "Yakiris makiris";
             var pageTitle = new Frame()
             {
                 Style = AppStyle.PageTitleLabelFrameStyle,
@@ -39,7 +39,7 @@ namespace EC.Forms.Views
                 Content = new Label
                 {
                     Style = AppStyle.PageTitleLabelStyle,
-                    Text = "Settings",
+                    Text = "Configuracion",
                 }
             };
 
@@ -47,11 +47,10 @@ namespace EC.Forms.Views
             {
                 VerticalOptions = LayoutOptions.EndAndExpand,
                 HorizontalOptions = LayoutOptions.Center,
-                Text = "Sign Out",
+                Text = "Salir",
                 TextColor = AppStyle.DarkLabelColor,
             };
-
-            Content = new StackLayout
+            var container = new StackLayout
             {
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 Padding = new Thickness(20),
@@ -64,10 +63,15 @@ namespace EC.Forms.Views
                     new SettingsUserView(),
                     new SyncView (),
                     new SettingsSwitchView ("GPS"),
-                    new SettingsSwitchView ("Jobs Alert"),
+                    //new SettingsSwitchView (""),
                     signoutButton,
                     new StatusBarView()
                 }
+            };
+
+            Content = new ScrollView()
+            {
+                Content = container
             };
         }
     }

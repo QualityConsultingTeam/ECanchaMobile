@@ -59,7 +59,7 @@ namespace EC.Forms.ViewModels
                 return _goToDetailsCommand ??
                     (_goToDetailsCommand = new Command(() =>
                         {
-                            this.Navigation.PushAsync(new CustomCarrousel());
+                            this.Navigation.PushAsync(new WooferPage());
                         }));
             }
         }
