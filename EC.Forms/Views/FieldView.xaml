@@ -8,11 +8,7 @@
              x:Class="EC.Forms.Views.FieldView">
 
     <StackLayout Orientation="Vertical">
-        <!--<StackLayout BackgroundColor="{x:Static Constant:Constants.NavigationBarBackgroundColor}"   HeightRequest="51" Padding="0,10,0,0" >
-            <local:LabelRender Text="{x:Static Constant:TextConstant.FieldsTitle}" TextColor="White" FontSize="16"
-                     VerticalOptions="CenterAndExpand" HorizontalOptions="Center" />
-            <StackLayout BackgroundColor="{x:Static Constant:Constants.BorderColor}" HeightRequest="1"/>
-        </StackLayout>-->
+       
          <ActivityIndicator IsVisible="{Binding IsBusyActivity}" IsRunning="{Binding IsBusyActivity}" Color="Green"/>
 
         <ListView x:Name="listView"

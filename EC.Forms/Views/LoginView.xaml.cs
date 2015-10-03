@@ -8,11 +8,11 @@ using Xamarin.Forms;
 
 namespace EC.Forms.Views
 {
-    /// <summary>
-    /// Elemento CustomEntry que posee un Placeholder Centrado
-    /// </summary>
-    public class CustonEmtry : Entry
+    public partial class LoginView : ContentPage
     {
-
+        public LoginView()
+        {
+            InitializeComponent();
+        }
     }
 }

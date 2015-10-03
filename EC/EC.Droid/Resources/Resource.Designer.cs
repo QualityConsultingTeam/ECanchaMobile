@@ -80,160 +80,142 @@ namespace EC.Droid
 			public const int bama9 = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int camera = 2130837515;
+			public const int chat = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int chat = 2130837516;
+			public const int children = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int children = 2130837517;
+			public const int childrenbg = 2130837517;
 			
 			// aapt resource value: 0x7f02000e
-			public const int childrenbg = 2130837518;
+			public const int Chipotle = 2130837518;
 			
 			// aapt resource value: 0x7f02000f
-			public const int Chipotle = 2130837519;
+			public const int dome = 2130837519;
 			
 			// aapt resource value: 0x7f020010
-			public const int dome = 2130837520;
+			public const int face = 2130837520;
 			
 			// aapt resource value: 0x7f020011
-			public const int face = 2130837521;
+			public const int fashion = 2130837521;
 			
 			// aapt resource value: 0x7f020012
-			public const int fashion = 2130837522;
+			public const int fashionbg = 2130837522;
 			
 			// aapt resource value: 0x7f020013
-			public const int fashionbg = 2130837523;
+			public const int food = 2130837523;
 			
 			// aapt resource value: 0x7f020014
-			public const int food = 2130837524;
+			public const int foodbg = 2130837524;
 			
 			// aapt resource value: 0x7f020015
-			public const int foodbg = 2130837525;
+			public const int Garlic = 2130837525;
 			
 			// aapt resource value: 0x7f020016
-			public const int Garlic = 2130837526;
+			public const int gifts = 2130837526;
 			
 			// aapt resource value: 0x7f020017
-			public const int gifts = 2130837527;
+			public const int giftsbg = 2130837527;
 			
 			// aapt resource value: 0x7f020018
-			public const int giftsbg = 2130837528;
+			public const int Habanero = 2130837528;
 			
 			// aapt resource value: 0x7f020019
-			public const int Habanero = 2130837529;
+			public const int hours = 2130837529;
 			
 			// aapt resource value: 0x7f02001a
-			public const int hours = 2130837530;
+			public const int hoursbg = 2130837530;
 			
 			// aapt resource value: 0x7f02001b
-			public const int hoursbg = 2130837531;
+			public const int housewares = 2130837531;
 			
 			// aapt resource value: 0x7f02001c
-			public const int housewares = 2130837532;
+			public const int housewaresbg = 2130837532;
 			
 			// aapt resource value: 0x7f02001d
-			public const int housewaresbg = 2130837533;
+			public const int ic_autorenew_black_24dp = 2130837533;
 			
 			// aapt resource value: 0x7f02001e
-			public const int ic_autorenew_black_24dp = 2130837534;
+			public const int ic_crop_black = 2130837534;
 			
 			// aapt resource value: 0x7f02001f
-			public const int ic_check_black = 2130837535;
+			public const int ic_done_black = 2130837535;
 			
 			// aapt resource value: 0x7f020020
-			public const int ic_collections_black = 2130837536;
+			public const int ic_fullscreen_black = 2130837536;
 			
 			// aapt resource value: 0x7f020021
-			public const int ic_crop_black = 2130837537;
+			public const int ic_launcher = 2130837537;
 			
 			// aapt resource value: 0x7f020022
-			public const int ic_done_black = 2130837538;
+			public const int ic_menu_black_18dp = 2130837538;
 			
 			// aapt resource value: 0x7f020023
-			public const int ic_fullscreen_black = 2130837539;
+			public const int ic_reply_black_24dp = 2130837539;
 			
 			// aapt resource value: 0x7f020024
-			public const int ic_launcher = 2130837540;
+			public const int ic_rotate_left_black = 2130837540;
 			
 			// aapt resource value: 0x7f020025
-			public const int ic_menu_black_18dp = 2130837541;
+			public const int ic_rotate_right_black = 2130837541;
 			
 			// aapt resource value: 0x7f020026
-			public const int ic_reply_black_24dp = 2130837542;
+			public const int icon = 2130837542;
 			
 			// aapt resource value: 0x7f020027
-			public const int ic_rotate_left_black = 2130837543;
+			public const int Jalapeno = 2130837543;
 			
 			// aapt resource value: 0x7f020028
-			public const int ic_rotate_right_black = 2130837544;
+			public const int luggage = 2130837544;
 			
 			// aapt resource value: 0x7f020029
-			public const int icon = 2130837545;
+			public const int luggagebg = 2130837545;
 			
 			// aapt resource value: 0x7f02002a
-			public const int Jalapeno = 2130837546;
+			public const int monoandroidsplash = 2130837546;
 			
 			// aapt resource value: 0x7f02002b
-			public const int logo = 2130837547;
+			public const int Overlay = 2130837547;
 			
 			// aapt resource value: 0x7f02002c
-			public const int luggage = 2130837548;
+			public const int pin = 2130837548;
 			
 			// aapt resource value: 0x7f02002d
-			public const int luggagebg = 2130837549;
+			public const int pindrop = 2130837549;
 			
 			// aapt resource value: 0x7f02002e
-			public const int monoandroidsplash = 2130837550;
+			public const int restrooms = 2130837550;
 			
 			// aapt resource value: 0x7f02002f
-			public const int Overlay = 2130837551;
+			public const int restroomsbg = 2130837551;
 			
 			// aapt resource value: 0x7f020030
-			public const int pin = 2130837552;
+			public const int services = 2130837552;
 			
 			// aapt resource value: 0x7f020031
-			public const int pindrop = 2130837553;
+			public const int servicesbg = 2130837553;
 			
 			// aapt resource value: 0x7f020032
-			public const int restrooms = 2130837554;
+			public const int settings = 2130837554;
 			
 			// aapt resource value: 0x7f020033
-			public const int restroomsbg = 2130837555;
+			public const int shoes = 2130837555;
 			
 			// aapt resource value: 0x7f020034
-			public const int services = 2130837556;
+			public const int shoesbg = 2130837556;
 			
 			// aapt resource value: 0x7f020035
-			public const int servicesbg = 2130837557;
+			public const int southmountain = 2130837557;
 			
 			// aapt resource value: 0x7f020036
-			public const int settings = 2130837558;
+			public const int Tabasco = 2130837558;
 			
 			// aapt resource value: 0x7f020037
-			public const int shoes = 2130837559;
+			public const int vending = 2130837559;
 			
 			// aapt resource value: 0x7f020038
-			public const int shoesbg = 2130837560;
-			
-			// aapt resource value: 0x7f020039
-			public const int southmountain = 2130837561;
-			
-			// aapt resource value: 0x7f02003a
-			public const int sync = 2130837562;
-			
-			// aapt resource value: 0x7f02003b
-			public const int Tabasco = 2130837563;
-			
-			// aapt resource value: 0x7f02003c
-			public const int ticket1 = 2130837564;
-			
-			// aapt resource value: 0x7f02003d
-			public const int vending = 2130837565;
-			
-			// aapt resource value: 0x7f02003e
-			public const int vendingbg = 2130837566;
+			public const int vendingbg = 2130837560;
 			
 			static Drawable()
 			{

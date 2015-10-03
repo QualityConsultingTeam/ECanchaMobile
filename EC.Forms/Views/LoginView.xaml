@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EC.Forms.Views.LoginView"
+              xmlns:local="clr-namespace:EC.Forms.Views;assembly=EC.Forms">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="Entry">
+        <Setter Property="BackgroundColor" Value="White"/>
+        <Setter Property="HeightRequest" Value="10"/>
+        <Setter Property="TextColor" Value="Gray"/>
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+
+
+  <ScrollView >
+
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+
+      <Grid Grid.Column="0" Grid.Row="0" >
+
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="60"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="110"/>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="60"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+          <RowDefinition Height="45"/>
+          <RowDefinition Height="65"/>
+          <RowDefinition Height="0"/>
+          <RowDefinition Height="140" />
+          <RowDefinition Height="15"/>
+          <RowDefinition  Height="35"/>
+          <RowDefinition  Height="5"/>
+          <RowDefinition  Height="35"/>
+          <RowDefinition  Height="5"/>
+          <RowDefinition  Height="35"/>
+          <RowDefinition  Height="5"/>
+          <RowDefinition  Height="35"/>
+          <RowDefinition  Height="5"/>
+          <RowDefinition  Height="35"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Column="2" Grid.Row="1" Source="Logo.png"  Aspect="AspectFit " />
+ 
+        <local:CustonEmtry Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="5" Placeholder="Email" Text="{Binding Email}" />
+
+        <local:CustonEmtry Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="7" Placeholder="Password" Text="{Binding Password}" />
+ 
+        <Picker Grid.Column="1" Grid.Row="11" Grid.ColumnSpan="3" x:Name="Countries"/>
+
+        <local:ButtonTextCentered Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="13" Text="GO!" TextColor="White" BackgroundColor="#de1e24" Command="{Binding LoginCommand}"/>
+
+      </Grid>
+
+      <Grid Grid.Column="0" Grid.Row="0" BackgroundColor="Black" Opacity="0.9" IsVisible="{Binding ShowWaiting}"/>
+
+      <Grid Grid.Column="0" Grid.Row="0" IsVisible="{Binding ShowWaiting}">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--<CC:AlertView Grid.Column="1" Grid.Row="1"  />-->
+
+      </Grid>
+
+
+
+
+    </Grid>
+
+
+
+  </ScrollView>
+
+</ContentPage>
