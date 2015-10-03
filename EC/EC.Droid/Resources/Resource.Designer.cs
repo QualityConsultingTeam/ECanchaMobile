@@ -167,55 +167,58 @@ namespace EC.Droid
 			public const int Jalapeno = 2130837543;
 			
 			// aapt resource value: 0x7f020028
-			public const int luggage = 2130837544;
+			public const int logo = 2130837544;
 			
 			// aapt resource value: 0x7f020029
-			public const int luggagebg = 2130837545;
+			public const int luggage = 2130837545;
 			
 			// aapt resource value: 0x7f02002a
-			public const int monoandroidsplash = 2130837546;
+			public const int luggagebg = 2130837546;
 			
 			// aapt resource value: 0x7f02002b
-			public const int Overlay = 2130837547;
+			public const int monoandroidsplash = 2130837547;
 			
 			// aapt resource value: 0x7f02002c
-			public const int pin = 2130837548;
+			public const int Overlay = 2130837548;
 			
 			// aapt resource value: 0x7f02002d
-			public const int pindrop = 2130837549;
+			public const int pin = 2130837549;
 			
 			// aapt resource value: 0x7f02002e
-			public const int restrooms = 2130837550;
+			public const int pindrop = 2130837550;
 			
 			// aapt resource value: 0x7f02002f
-			public const int restroomsbg = 2130837551;
+			public const int restrooms = 2130837551;
 			
 			// aapt resource value: 0x7f020030
-			public const int services = 2130837552;
+			public const int restroomsbg = 2130837552;
 			
 			// aapt resource value: 0x7f020031
-			public const int servicesbg = 2130837553;
+			public const int services = 2130837553;
 			
 			// aapt resource value: 0x7f020032
-			public const int settings = 2130837554;
+			public const int servicesbg = 2130837554;
 			
 			// aapt resource value: 0x7f020033
-			public const int shoes = 2130837555;
+			public const int settings = 2130837555;
 			
 			// aapt resource value: 0x7f020034
-			public const int shoesbg = 2130837556;
+			public const int shoes = 2130837556;
 			
 			// aapt resource value: 0x7f020035
-			public const int southmountain = 2130837557;
+			public const int shoesbg = 2130837557;
 			
 			// aapt resource value: 0x7f020036
-			public const int Tabasco = 2130837558;
+			public const int southmountain = 2130837558;
 			
 			// aapt resource value: 0x7f020037
-			public const int vending = 2130837559;
+			public const int Tabasco = 2130837559;
 			
 			// aapt resource value: 0x7f020038
-			public const int vendingbg = 2130837560;
+			public const int vending = 2130837560;
+			
+			// aapt resource value: 0x7f020039
+			public const int vendingbg = 2130837561;
 			
 			static Drawable()
 			{
