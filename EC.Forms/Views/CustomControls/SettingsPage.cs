@@ -31,7 +31,6 @@ namespace EC.Forms.Views
         public SettingsPage()
         {
             Style = AppStyle.SettingsPageStyle;
-            Title = "Yakiris makiris";
             var pageTitle = new Frame()
             {
                 Style = AppStyle.PageTitleLabelFrameStyle,
@@ -49,6 +48,10 @@ namespace EC.Forms.Views
                 HorizontalOptions = LayoutOptions.Center,
                 Text = "Salir",
                 TextColor = AppStyle.DarkLabelColor,
+                Command = new Command(()=> 
+                {
+                    this.Navigation.PushAsync(new LoginView());
+                },()=> true)
             };
             var container = new StackLayout
             {

@@ -54,16 +54,12 @@
           <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Image Grid.Column="2" Grid.Row="1" Source="loginLogo1.png"  Aspect="AspectFit " />
-
-        <Image Grid.Column="2" Grid.Row="3" Source="loginLogo2.png"  Aspect="AspectFit " />
-
+        <Image Grid.Column="2" Grid.Row="1" Source="Logo.png"  Aspect="AspectFit " />
+ 
         <local:CustonEmtry Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="5" Placeholder="Email" Text="{Binding Email}" />
 
         <local:CustonEmtry Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="7" Placeholder="Password" Text="{Binding Password}" />
-
-        <local:CustonEmtry Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="9" Placeholder="EMAIL ADDRESS" Keyboard="Email" Text="{Binding Email}"/>
-
+ 
         <Picker Grid.Column="1" Grid.Row="11" Grid.ColumnSpan="3" x:Name="Countries"/>
 
         <local:ButtonTextCentered Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="13" Text="GO!" TextColor="White" BackgroundColor="#de1e24" Command="{Binding LoginCommand}"/>
