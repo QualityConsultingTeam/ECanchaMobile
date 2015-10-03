@@ -14,7 +14,7 @@ namespace EC.Forms.Views
             Title = "EN LA CANCHA";
             
 
-           Detail = new NavigationPage(new FieldView())
+           Detail = new NavigationPage(new LoginView())
            {
                BarBackgroundColor = Constants.NavigationBarBackgroundColor,
                BarTextColor = Color.White,

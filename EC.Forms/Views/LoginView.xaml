@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EC.Forms.Views.LoginView"
-              xmlns:local="clr-namespace:EC.Forms.Views;assembly=EC.Forms">
+              xmlns:local="clr-namespace:EC.Forms.Views;assembly=EC.Forms" BackgroundImage="bg-grass.jpg">
   <ContentPage.Resources>
     <ResourceDictionary>
       <Style TargetType="Entry">
@@ -16,17 +16,7 @@
 
 
   <ScrollView >
-
-    <Grid>
-      <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="*"/>
-      </Grid.ColumnDefinitions>
-
-      <Grid.RowDefinitions>
-        <RowDefinition Height="*"/>
-      </Grid.RowDefinitions>
-
-      <StackLayout Padding="20">
+  <StackLayout Padding="20">
 
       
         
@@ -40,30 +30,6 @@
         <local:ButtonTextCentered  Text="GO!" TextColor="White" BackgroundColor="#de1e24" Command="{Binding LoginCommand}"/>
 
       </StackLayout>
-
-      <Grid Grid.Column="0" Grid.Row="0" BackgroundColor="Black" Opacity="0.9" IsVisible="{Binding ShowWaiting}"/>
-
-      <Grid Grid.Column="0" Grid.Row="0" IsVisible="{Binding ShowWaiting}">
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="*"/>
-          <ColumnDefinition Width="Auto"/>
-          <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <Grid.RowDefinitions>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="Auto"/>
-          <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <!--<CC:AlertView Grid.Column="1" Grid.Row="1"  />-->
-
-      </Grid>
-
-
-
-
-    </Grid>
-
 
 
   </ScrollView>
