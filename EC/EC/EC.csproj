@@ -55,10 +55,12 @@
     <Compile Include="Model\Location.cs" />
     <Compile Include="Model\LocationCalculatedEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceAgents\AccountService.cs" />
     <Compile Include="ServiceAgents\Base\BaseRequest.cs" />
     <Compile Include="ServiceAgents\Base\IBaseRequest.cs" />
     <Compile Include="ServiceAgents\CoreClient.cs" />
     <Compile Include="ServiceAgents\FieldsService.cs" />
+    <Compile Include="ServiceAgents\Interfaces\IAccountService.cs" />
     <Compile Include="ServiceAgents\Interfaces\IBookingService.cs" />
     <Compile Include="ServiceAgents\Interfaces\ICoreClient.cs" />
     <Compile Include="ServiceAgents\Interfaces\IFieldsService.cs" />
