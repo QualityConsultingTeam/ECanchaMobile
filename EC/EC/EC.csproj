@@ -42,6 +42,7 @@
     <Compile Include="DocumentResponse\Enums.cs" />
     <Compile Include="DocumentResponse\Field.cs" />
     <Compile Include="DocumentResponse\FilterOptionModel.cs" />
+    <Compile Include="DocumentResponse\Login.cs" />
     <Compile Include="Infrastructure\Abstractions\Repositories\IApplicationDataRepository.cs" />
     <Compile Include="Infrastructure\Abstractions\Services\IApplicationSettingServiceSingleton.cs" />
     <Compile Include="Infrastructure\Abstractions\Services\IApplicationStorageService.cs" />

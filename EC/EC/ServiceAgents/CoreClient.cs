@@ -14,6 +14,7 @@ namespace EC.ServiceAgents
         //private readonly MvxSubscriptionToken _token;
 
         IFieldsService _fieldService;
+        IAccountService _accountService;
 
         public IFieldsService FieldsService
         {
@@ -25,7 +26,17 @@ namespace EC.ServiceAgents
             }
         }
 
-      private FieldsService StartService()
+        public IAccountService AccountService
+        {
+            get
+            {
+                return _accountService ??
+                    (_accountService = new AccountService(_applicationSettingService.UrlPrefix, _applicationStorageService.SecurityToken));
+
+            }
+        }
+
+        private FieldsService StartService()
         {
             return new FieldsService(_applicationSettingService.UrlPrefix, _applicationStorageService.SecurityToken);
         }

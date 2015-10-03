@@ -4,6 +4,7 @@
     {
         IFieldsService FieldsService{ get; }
 
+        IAccountService AccountService { get; }
         
         void Refresh();
     }

@@ -48,10 +48,10 @@ namespace EC.Forms.Views
                 HorizontalOptions = LayoutOptions.Center,
                 Text = "Salir",
                 TextColor = AppStyle.DarkLabelColor,
-                Command = new Command(()=> 
+                Command = new Command(async () =>
                 {
-                    this.Navigation.PushAsync(new LoginView());
-                },()=> true)
+                    await this.Navigation.PushAsync(new LoginView());
+                }, ()=> true)
             };
             var container = new StackLayout
             {
