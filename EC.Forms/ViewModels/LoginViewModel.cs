@@ -29,7 +29,7 @@ namespace EC.Forms.ViewModels
             {
                 return _loginCommand ??
                     (_loginCommand = new Command(async () => await LoginAction(),
-                    () => !IsBusy && !string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password)));
+                    () => !string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password)));
             }
         }
 

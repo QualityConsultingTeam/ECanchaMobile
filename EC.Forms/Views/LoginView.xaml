@@ -25,9 +25,9 @@
         <local:CustonEmtry Placeholder="Email" Text="{Binding Email}" />
 
         <local:CustonEmtry Placeholder="Password" Text="{Binding Password}" />
- 
-        
-        <local:ButtonTextCentered  Text="GO!" TextColor="White" BackgroundColor="#de1e24" Command="{Binding LoginCommand}"/>
+
+
+        <local:ButtonTextCentered  Text="GO!" x:Name="LoginButton" TextColor="White" BackgroundColor="#de1e24" Command="{Binding LoginCommand}"/>
 
       </StackLayout>
 
