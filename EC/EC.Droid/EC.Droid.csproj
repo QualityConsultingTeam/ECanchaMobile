@@ -111,6 +111,8 @@
     <AndroidResource Include="Resources\drawable\ic_reply_black_24dp.png" />
     <AndroidResource Include="Resources\drawable\ic_rotate_left_black.png" />
     <AndroidResource Include="Resources\drawable\ic_rotate_right_black.png" />
+    <AndroidResource Include="Resources\drawable\bg-grass.jpg" />
+    <AndroidResource Include="Resources\drawable\logo.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_rotate_right_black.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_rotate_left_black.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_reply_black_24dp.png" />
