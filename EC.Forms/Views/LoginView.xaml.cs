@@ -14,14 +14,14 @@ namespace EC.Forms.Views
         public LoginView()
         {
             InitializeComponent();
-            this.BindingContext = new LoginViewModel();
-            LoginButton.Clicked += LoginButton_Clicked;
+           // this.BindingContext = new LoginViewModel();
+            //LoginButton.Clicked += LoginButton_Clicked;
         }
 
-        private void LoginButton_Clicked(object sender, EventArgs e)
-        {
-            var vm = (LoginViewModel)BindingContext;
-            vm.LoginCommand.Execute(null);
-        }
+        //private void LoginButton_Clicked(object sender, EventArgs e)
+        //{
+        //    var vm = (LoginViewModel)BindingContext;
+        //    vm.LoginCommand.Execute(null);
+        //}
     }
 }

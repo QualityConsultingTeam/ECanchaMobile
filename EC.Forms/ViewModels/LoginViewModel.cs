@@ -11,6 +11,11 @@ namespace EC.Forms.ViewModels
     public class LoginViewModel : ViewModelBase
     {
 
+        public LoginViewModel()
+        {
+
+        }
+
 
         #region Public Properties
 

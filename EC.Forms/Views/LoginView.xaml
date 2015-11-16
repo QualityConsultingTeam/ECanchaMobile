@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EC.Forms.Views.LoginView"
-              xmlns:local="clr-namespace:EC.Forms.Views;assembly=EC.Forms" BackgroundImage="bg-grass.jpg">
-  <ContentPage.Resources>
+              xmlns:local="clr-namespace:EC.Forms.Views;assembly=EC.Forms" Title="LOGIN" BackgroundImage="bggrass.jpg"  >
+  <!--<ContentPage.Resources>
     <ResourceDictionary>
       <Style TargetType="Entry">
         <Setter Property="BackgroundColor" Value="White"/>
@@ -11,16 +11,16 @@
         <Setter Property="TextColor" Value="Gray"/>
       </Style>
     </ResourceDictionary>
-  </ContentPage.Resources>
+  </ContentPage.Resources>-->
 
 
 
   <ScrollView >
-  <StackLayout Padding="20">
+   <StackLayout   HorizontalOptions="Center" VerticalOptions="Center">
 
       
         
-        <Image  Source="Logo.png"  Aspect="AspectFit " />
+        <Image  Source="logo.png"  Aspect="AspectFit " HeightRequest="300" />
  
         <local:CustonEmtry Placeholder="Email" Text="{Binding Email}" />
 
@@ -30,8 +30,7 @@
         <local:ButtonTextCentered  Text="GO!" x:Name="LoginButton" TextColor="White" BackgroundColor="#de1e24" Command="{Binding LoginCommand}"/>
 
       </StackLayout>
-
-
+ 
   </ScrollView>
 
 </ContentPage>

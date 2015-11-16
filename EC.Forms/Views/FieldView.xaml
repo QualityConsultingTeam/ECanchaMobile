@@ -5,7 +5,7 @@
              xmlns:Constant="clr-namespace:EC.Forms;assembly=EC.Forms"
              xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
              xmlns:Custom="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
-             x:Class="EC.Forms.Views.FieldView">
+             x:Class="EC.Forms.Views.FieldView" BackgroundImage="bggrass.png">
 
     <StackLayout Orientation="Vertical">
        
@@ -22,32 +22,34 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid  Padding="10,5,10,10">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-                          
-                            <local:LabelRender Text="{Binding Name}"  
-                                               Grid.Row="0" Grid.ColumnSpan="2"
-                                               FontSize="Large"  
-                                               TextColor="Black" 
-                                               VerticalOptions="CenterAndExpand" 
-                                               HorizontalOptions="CenterAndExpand"   />
+                      <StackLayout VerticalOptions="FillAndExpand"  Orientation="Vertical" Padding="20,2,20,2" BackgroundColor="White">
+                        
+                        <Grid  >
+                          <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                          </Grid.RowDefinitions>
+                          <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                          </Grid.ColumnDefinitions>
+
+                          <local:LabelRender Text="{Binding Name}"
+                                             Grid.Row="0" Grid.ColumnSpan="2"
+                                             FontSize="Large"
+                                             TextColor="Black"
+                                             VerticalOptions="CenterAndExpand"
+                                             HorizontalOptions="CenterAndExpand"   />
 
                           <Custom:CircleImage Source="{Binding Center.FieldPicure}"
-                                              BorderThickness="7" BorderColor="Green" 
+                                              BorderThickness="7" BorderColor="Green"
                                               Grid.Row="1">
                             <Custom:CircleImage.WidthRequest>
                               <OnPlatform x:TypeArguments="x:Double">
-                                
+
                                 <OnPlatform.Android>120 </OnPlatform.Android>
-                                
+
                               </OnPlatform>
                             </Custom:CircleImage.WidthRequest>
                             <Custom:CircleImage.HeightRequest>
@@ -66,27 +68,29 @@
                                     <OnPlatform x:TypeArguments="x:Double" iOS="80"  Android="125" />
                                 </Image.HeightRequest>
                             </Image>-->
-                          
-                            <StackLayout Spacing="4"  Grid.Column="1" Grid.Row="1" VerticalOptions="Center">
-                                <!--<Label Text="{Binding Name}" FontSize="Large"  TextColor="Black" LineBreakMode="WordWrap"/>-->
-                                <Label Text="{Binding Distance}" TextColor="Black" FontSize="Small" LineBreakMode="NoWrap"/>
-                                <Label Text="{Binding Center.Name}" FontSize="Medium" LineBreakMode="WordWrap"/>
-                                <Label Text="{Binding Lawn}" FontSize="Small" LineBreakMode="WordWrap"/>
-                                <Label Text="{Binding Shoes}" FontSize="Small" LineBreakMode="WordWrap"/>
-                                <Label Text="{Binding Type}" FontSize="Small" LineBreakMode="WordWrap"/>
-                                
-                            </StackLayout>
 
-                          <StackLayout Orientation="Horizontal" 
+                          <StackLayout Spacing="4"  Grid.Column="1" Grid.Row="1" VerticalOptions="Center">
+                            <!--<Label Text="{Binding Name}" FontSize="Large"  TextColor="Black" LineBreakMode="WordWrap"/>-->
+                            <Label Text="{Binding Distance}" TextColor="Black" FontSize="Small" LineBreakMode="NoWrap"/>
+                            <Label Text="{Binding Center.Name}" FontSize="Medium" LineBreakMode="WordWrap"/>
+                            <Label Text="{Binding Lawn}" FontSize="Small" LineBreakMode="WordWrap"/>
+                            <Label Text="{Binding Shoes}" FontSize="Small" LineBreakMode="WordWrap"/>
+                            <Label Text="{Binding Type}" FontSize="Small" LineBreakMode="WordWrap"/>
+
+                          </StackLayout>
+
+                          <StackLayout Orientation="Horizontal"
                                        Grid.Row="3" Spacing="4" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand">
                             <Button Text="13:00" BackgroundColor="Teal" ></Button>
                             <Button Text="14:00" BackgroundColor="Teal" ></Button>
                             <Button Text="15:00" BackgroundColor="Teal" ></Button>
                             <Button Text="16:00" BackgroundColor="Teal" ></Button>
-                           
+
                           </StackLayout>
+
+                        </Grid>
                         
-                      </Grid>
+                      </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

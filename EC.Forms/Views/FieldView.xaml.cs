@@ -19,7 +19,7 @@ namespace EC.Forms.Views
             // this.BindingContext = new FieldsViewModel(this);
 
             this.BindingContext = new FieldsViewModel(this.Navigation);
-            listView.ItemSelected += ListView_ItemSelected;
+            //listView.ItemSelected += ListView_ItemSelected;
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

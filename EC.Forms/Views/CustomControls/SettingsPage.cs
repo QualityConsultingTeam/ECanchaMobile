@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EC.Forms.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,20 @@ namespace EC.Forms.Views
             Master = new SettingsPage();
 
         }
+
+        //public async void NavigateTo(EC.Models.MenuItem menu)
+        //{
+        //    if (menu == null)
+        //        return;
+
+        //    Page displayPage = (Page)Activator.CreateInstance(menu.TargetType);
+
+        //    // Detail = new NavigationPage(displayPage);
+
+        //    await Detail.Navigation.PushAsync(displayPage);
+
+        //    IsPresented = false;
+        //}
     }
 
     public class SettingsPage : ContentPage
@@ -31,6 +46,7 @@ namespace EC.Forms.Views
         public SettingsPage()
         {
             Style = AppStyle.SettingsPageStyle;
+            this.BindingContext = new SettingsViewModel();
             var pageTitle = new Frame()
             {
                 Style = AppStyle.PageTitleLabelFrameStyle,
@@ -48,11 +64,10 @@ namespace EC.Forms.Views
                 HorizontalOptions = LayoutOptions.Center,
                 Text = "Salir",
                 TextColor = AppStyle.DarkLabelColor,
-                Command = new Command(async () =>
-                {
-                    await this.Navigation.PushAsync(new LoginView());
-                }, ()=> true)
+               
             };
+            signoutButton.SetBinding(Button.CommandProperty, "NavigateTologinCommand");
+
             var container = new StackLayout
             {
                 VerticalOptions = LayoutOptions.FillAndExpand,
