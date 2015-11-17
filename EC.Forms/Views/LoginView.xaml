@@ -22,9 +22,9 @@
         
         <Image  Source="logo.png"  Aspect="AspectFit " HeightRequest="300" />
  
-        <local:CustonEmtry Placeholder="Email" Text="{Binding Email}" />
+        <local:CustonEmtry Placeholder="Email" Text="{Binding Email}"  TextColor="White"/>
 
-        <local:CustonEmtry Placeholder="Password" Text="{Binding Password}" />
+        <local:CustonEmtry Placeholder="Password" Text="{Binding Password}" TextColor="White"  />
 
 
         <local:ButtonTextCentered  Text="GO!" x:Name="LoginButton" TextColor="White" BackgroundColor="#de1e24" Command="{Binding LoginCommand}"/>

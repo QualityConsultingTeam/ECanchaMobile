@@ -19,18 +19,11 @@ namespace EC.Forms.Views
 
             var centers = new Centers();
             centers.Title = "Complejos";
-
-            var login = new LoginView();
-            login.Title = "Login";
-
-            this.BackgroundImage = "bggrass.jpg";
+            
+            
 
             this.Children.Add(fields);
-            this.Children.Add(centers);
-            this.Children.Add(login);
-
-
-
+            this.Children.Add(centers);   
 
         }
     }

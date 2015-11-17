@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using EC.Model;
 
 namespace EC.Forms.Views
 {
@@ -22,31 +23,55 @@ namespace EC.Forms.Views
 
            };
 
-            Master = new SettingsPage();
+            Master = new SettingsPage(navigateto,NavigateAsync);
 
         }
 
-        //public async void NavigateTo(EC.Models.MenuItem menu)
-        //{
-        //    if (menu == null)
-        //        return;
+        public async void navigateto(EC.Model.MenuItem menu)
+        {
+            if (menu == null)
+                return;
 
-        //    Page displayPage = (Page)Activator.CreateInstance(menu.TargetType);
+            Page displayPage = (Page)Activator.CreateInstance(menu.TargetType);
 
-        //    // Detail = new NavigationPage(displayPage);
+            // Detail = new NavigationPage(displayPage);
 
-        //    await Detail.Navigation.PushAsync(displayPage);
+            await Detail.Navigation.PushAsync(displayPage);
 
-        //    IsPresented = false;
-        //}
+            IsPresented = false;
+        }
+
+        public async void NavigateAsync(Page page)
+        {
+            await Detail.Navigation.PushAsync(page);
+            IsPresented = false;
+        }
     }
 
     public class SettingsPage : ContentPage
     {
+        private Action<Page> navigateAsync;
+        private Action<Model.MenuItem> navigateto;
+       
+
         public SettingsPage()
         {
+            SetupControls();
+        }
+
+        public SettingsPage(Action<Model.MenuItem> navigateto, Action<Page> navigateAsync) 
+        {
+            this.navigateto = navigateto;
+            this.navigateAsync = navigateAsync;
+            SetupControls();
+        }
+
+       
+
+        public void SetupControls()
+        {
             Style = AppStyle.SettingsPageStyle;
-            this.BindingContext = new SettingsViewModel();
+            this.BindingContext = new SettingsViewModel(navigateAsync);
             var pageTitle = new Frame()
             {
                 Style = AppStyle.PageTitleLabelFrameStyle,
@@ -64,9 +89,11 @@ namespace EC.Forms.Views
                 HorizontalOptions = LayoutOptions.Center,
                 Text = "Salir",
                 TextColor = AppStyle.DarkLabelColor,
-               
+
             };
             signoutButton.SetBinding(Button.CommandProperty, "NavigateTologinCommand");
+
+            var menu = new MenuView(navigateto);
 
             var container = new StackLayout
             {

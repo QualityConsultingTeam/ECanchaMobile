@@ -17,8 +17,8 @@
               IsPullToRefreshEnabled="true"
               RefreshCommand="{Binding RefreshFieldsCommand}"
               IsRefreshing ="{Binding IsBusy,Mode=OneWay}"
-              BackgroundColor="White"
-              SeparatorColor="Gray" SeparatorVisibility="Default" >
+              BackgroundColor="Transparent"
+              SeparatorColor="Gray" SeparatorVisibility="None" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
