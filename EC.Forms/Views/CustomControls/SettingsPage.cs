@@ -34,9 +34,9 @@ namespace EC.Forms.Views
 
             Page displayPage = (Page)Activator.CreateInstance(menu.TargetType);
 
-            // Detail = new NavigationPage(displayPage);
+            if(menu.TargetType== typeof(HomeTabs)) Detail = new NavigationPage(displayPage);
 
-            await Detail.Navigation.PushAsync(displayPage);
+            else await Detail.Navigation.PushAsync(displayPage);
 
             IsPresented = false;
         }
@@ -109,6 +109,7 @@ namespace EC.Forms.Views
                     new SyncView (),
                     new SettingsSwitchView ("GPS"),
                     //new SettingsSwitchView (""),
+                    menu,
                     signoutButton,
                     new StatusBarView()
                 }

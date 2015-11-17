@@ -17,6 +17,7 @@ namespace EC.Forms.ViewModels
         public SettingsViewModel(Action<Page> navigateAsync)
         {
             this.navigateAsync = navigateAsync;
+            InitializeMenuValues();
             
         }
 
@@ -39,7 +40,7 @@ namespace EC.Forms.ViewModels
                 Id = 0,
                 Title = "Mi Cuenta",
                 TargetType = typeof(MyAccount),
-                Icon = "publicamenu.png",
+                Icon = "ic_fullscreen_black.png",
             });
 
             MenuItems.Add(new EC.Model.MenuItem()
@@ -47,7 +48,7 @@ namespace EC.Forms.ViewModels
                 Id = 0,
                 Title = "Canchas",
                 TargetType = typeof(HomeTabs),
-                Icon = "faq.png",
+                Icon = "ic_fullscreen_black.png",
             });
 
             

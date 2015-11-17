@@ -18,12 +18,19 @@
               RefreshCommand="{Binding RefreshFieldsCommand}"
               IsRefreshing ="{Binding IsBusy,Mode=OneWay}"
               BackgroundColor="Transparent"
-              SeparatorColor="Gray" SeparatorVisibility="None" >
+              SeparatorColor="Transparent" SeparatorVisibility="None" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                      <StackLayout VerticalOptions="FillAndExpand"  Orientation="Vertical" Padding="20,2,20,2" BackgroundColor="White">
+                      <StackLayout VerticalOptions="FillAndExpand"  Orientation="Vertical" Padding="20,2,20,2" >
                         
+                       
+                       	<StackLayout BackgroundColor="White" Orientation="Vertical" VerticalOptions="FillAndExpand" Padding="10" >
+                           <local:LabelRender Text="{Binding Name}"
+                                             FontSize="Large"
+                                             TextColor="Black"
+                                             VerticalOptions="CenterAndExpand"
+                                             HorizontalOptions="CenterAndExpand"   />
                         <Grid  >
                           <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
@@ -35,12 +42,12 @@
                             <ColumnDefinition Width="*" />
                           </Grid.ColumnDefinitions>
 
-                          <local:LabelRender Text="{Binding Name}"
+                          <!--<local:LabelRender Text="{Binding Name}"
                                              Grid.Row="0" Grid.ColumnSpan="2"
                                              FontSize="Large"
                                              TextColor="Black"
                                              VerticalOptions="CenterAndExpand"
-                                             HorizontalOptions="CenterAndExpand"   />
+                                             HorizontalOptions="CenterAndExpand"   />-->
 
                           <Custom:CircleImage Source="{Binding Center.FieldPicure}"
                                               BorderThickness="7" BorderColor="Green"
@@ -81,15 +88,15 @@
 
                           <StackLayout Orientation="Horizontal"
                                        Grid.Row="3" Spacing="4" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand">
-                            <Button Text="13:00" BackgroundColor="Teal" ></Button>
-                            <Button Text="14:00" BackgroundColor="Teal" ></Button>
-                            <Button Text="15:00" BackgroundColor="Teal" ></Button>
-                            <Button Text="16:00" BackgroundColor="Teal" ></Button>
+                            <Button Text="13:00" BackgroundColor="Teal" TextColor="White" HeightRequest="40" WidthRequest="65"  ></Button>
+                            <Button Text="14:00" BackgroundColor="Teal" TextColor="White"  HeightRequest="40" WidthRequest="65"></Button>
+                            <Button Text="15:00" BackgroundColor="Teal" TextColor="White" HeightRequest="40" WidthRequest="65"></Button>
+                            <Button Text="16:00" BackgroundColor="Teal" TextColor="White" HeightRequest="40" WidthRequest="65"></Button>
 
                           </StackLayout>
 
                         </Grid>
-                        
+                        </StackLayout>
                       </StackLayout>
                     </ViewCell>
                 </DataTemplate>

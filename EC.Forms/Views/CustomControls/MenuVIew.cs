@@ -75,7 +75,7 @@ namespace EC.Forms.Views
         {
 
             VerticalOptions = LayoutOptions.FillAndExpand;
-            BackgroundColor = Color.White;
+            BackgroundColor = Color.Transparent;
             SeparatorVisibility = SeparatorVisibility.None;
              
             ItemTemplate = new DataTemplate(() =>
