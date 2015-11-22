@@ -1,8 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="enlacancha.com">
 	<uses-sdk android:minSdkVersion="18" android:targetSdkVersion="23" />
-	  <application android:label="En La Cancha Club" android:icon="@drawable/ic_launcher" android:theme="@style/MyTheme">
-    
-  </application>
+	<application android:label="En La Cancha Club" android:icon="@drawable/ic_launcher" android:theme="@style/MyTheme"></application>
 	<uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
 </manifest>

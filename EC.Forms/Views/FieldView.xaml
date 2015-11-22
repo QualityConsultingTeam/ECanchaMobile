@@ -49,7 +49,7 @@
                                              VerticalOptions="CenterAndExpand"
                                              HorizontalOptions="CenterAndExpand"   />-->
 
-                          <Custom:CircleImage Source="{Binding Center.FieldPicure}"
+                          <!--<Custom:CircleImage Source="{Binding Center.FieldPicure}"
                                               BorderThickness="7" BorderColor="Green"
                                               Grid.Row="1">
                             <Custom:CircleImage.WidthRequest>
@@ -66,15 +66,15 @@
                                 <OnPlatform.WinPhone>75</OnPlatform.WinPhone>
                               </OnPlatform>
                             </Custom:CircleImage.HeightRequest>
-                          </Custom:CircleImage>
-                          <!--<Image Grid.Column="0" Grid.Row="1"    Source="{Binding Center.FieldPicure}">
+                          </Custom:CircleImage>-->
+                          <Image Grid.Column="0" Grid.Row="1"    Source="{Binding Center.FieldPicure}">
                                 <Image.WidthRequest>
                                     <OnPlatform x:TypeArguments="x:Double"  iOS="80" Android="125" />
                                 </Image.WidthRequest>
                                 <Image.HeightRequest>
                                     <OnPlatform x:TypeArguments="x:Double" iOS="80"  Android="125" />
                                 </Image.HeightRequest>
-                            </Image>-->
+                            </Image>
 
                           <StackLayout Spacing="4"  Grid.Column="1" Grid.Row="1" VerticalOptions="Center">
                             <!--<Label Text="{Binding Name}" FontSize="Large"  TextColor="Black" LineBreakMode="WordWrap"/>-->

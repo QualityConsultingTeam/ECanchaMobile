@@ -14,7 +14,7 @@ using System.Threading;
 
 namespace EC.Droid
 {
-    [Activity(Label = "SplashActivity", MainLauncher = true, NoHistory = true, Theme = "@android:style/Theme.NoTitleBar")]
+    [Activity(Label = "En la Cancha", MainLauncher = true, NoHistory = true, Theme = "@android:style/Theme.NoTitleBar")]
     public class SplashActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
