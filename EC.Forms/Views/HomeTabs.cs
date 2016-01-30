@@ -14,6 +14,16 @@ namespace EC.Forms.Views
         {
             this.Title = "En la Cancha Club";
 
+			var createFeedToolbarItem = new ToolbarItem()
+			{
+				Icon = "ic_location_searching_black_24dp.png",
+				Text = "Edit",
+			};
+			//createFeedToolbarItem.SetBinding(ToolbarItem.CommandProperty, "CreateFeedCommand");
+			this.ToolbarItems.Add(createFeedToolbarItem);
+
+
+
             var fields = new FieldView();
             fields.Title = "Canchas";
 

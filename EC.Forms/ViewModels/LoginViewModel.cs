@@ -54,6 +54,7 @@ namespace EC.Forms.ViewModels
 				return;
             }
 
+			await this._currentPage.DisplayAlert ("Inicio De Sesión", "Usuario o Contraseña inválidos", "Ok!");
 			await this._currentPage.Navigation.PopModalAsync ();
 
         }

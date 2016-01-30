@@ -63,8 +63,7 @@ namespace EC.Droid
             Log.Verbose(PushHandlerBroadcastReceiver.TAG, "GCM Registered: " + registrationId);
             RegistrationID = registrationId;
 
-            createNotification("PushHandlerService-GCM Registered...",
-                                "The device has been Registered!");
+            //createNotification("PushHandlerService-GCM Registered...", "The device has been Registered!");
 
             Hub = new NotificationHub(Constants.NotificationHubName, Constants.ListenConnectionString,
                                         context);
@@ -116,6 +115,21 @@ namespace EC.Droid
             var edit = prefs.Edit();
             edit.PutString("last_msg", msg.ToString());
             edit.Commit();
+
+
+			var title = intent.Extras.GetString("title");
+
+			var author = intent.Extras.GetString("author");
+
+			var id = intent.Extras.GetString("id");
+
+			if (!string.IsNullOrEmpty(title) && !string.IsNullOrEmpty(author) && !string.IsNullOrEmpty(id))
+			{
+				//createNotification(title, author, Convert.ToInt32(id));
+				createNotification(author,title,Convert.ToInt32(id));
+				return;
+			}
+ 
 
             string message = intent.Extras.GetString("message");
             if (!string.IsNullOrEmpty(message))
@@ -169,7 +183,7 @@ namespace EC.Droid
 				stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
 
 			// vibration Pattern
-			long[] pattern = {500,500,500,500,500,500,500,500,500};
+			long[] pattern = {500,500,500,800,500};
 
 
 			// Build the notification:
@@ -197,6 +211,7 @@ namespace EC.Droid
 
 		}
 
+		 
 		private Android.Net.Uri GetNotificationSound(int categoryId)
 		{
 			//Android.Net.Uri sound = Android.Net.Uri.Parse ("android.resource://"+this.BaseContext.PackageName+"/"+Resource.Raw.oritaaviso);

@@ -18,10 +18,16 @@
         } 
         public async Task<List<Field>> GetFields()
         {
+			try{
             string url = String.Format(CultureInfo.InvariantCulture
               , "{0}/api/canchas", _urlPrefix);
 
-            return await base.GetAsync<List<Field>>(url);
+				return await base.GetAsync<List<Field>>(url);
+			}
+			catch(Exception ex) 
+			{
+				return new List<Field> ();
+			}
         }
 
         public async Task<List<Field>> GetFields(FilterOptionModel filter)
@@ -33,16 +39,24 @@
             return await base.PostAsync<FilterOptionModel,List<Field>>(url,filter);
 			}
 			catch(Exception ex) {
-				return null;
+				return new List<Field> ();
 			}
         }
 
         public async Task<List<Field>> GetFields(string keywords, string lat, string lon)
         {
+			try
+			{
+				
             string url = String.Format(CultureInfo.InvariantCulture
               , "{0}/api/canchas?keywords={1}", _urlPrefix, keywords);
 
-            return await base.GetAsync<List<Field>>(url);
+				return await base.GetAsync<List<Field>>(url);
+			}
+			catch(Exception ex) 
+			{
+				return new List<Field> ();
+			}
         }
     }
 }
