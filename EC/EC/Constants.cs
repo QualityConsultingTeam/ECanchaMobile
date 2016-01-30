@@ -8,8 +8,8 @@ namespace EC
 {
     public static class Constants
     {
-        public static string ListenConnectionString = "Endpoint=sb://enlacanchahub.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=eH9zKfyFqwgnB5/2hO/gU2cO6bdKJ5neIC7OLHKsUok=";
-        public static string NotificationHubName = "EnlacanchaHub";
+        public static string ListenConnectionString = "Endpoint=sb://enlacancha.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=hIEzHKFtUZkVE4CyZr3tqgCIPfJYbwB3WWnL9Ow8ZF0=";
+        public static string NotificationHubName = "EnLaCanchaHub";
         public static string SenderID = "894621704108";
     }
 }
