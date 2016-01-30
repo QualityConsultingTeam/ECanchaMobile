@@ -10,7 +10,7 @@ namespace EC.Forms.Views
     public class MenuView : ContentView
     {
         private Action<EC.Model.MenuItem> NavigateAction;
-        private bool v;
+        
 
         public ListView Menu { get; set; }
 
@@ -65,54 +65,63 @@ namespace EC.Forms.Views
     }
 
 
-    /// <summary>
-    ///  Custom    menu
-    /// </summary>
-    public class CustomMenuList : ListView
-    {
+    
+	/// <summary>
+	///  Custom    menu
+	/// </summary>
+	public class CustomMenuList : ListView
+	{
 
-        public CustomMenuList()
-        {
+		public CustomMenuList()
+		{
 
-            VerticalOptions = LayoutOptions.FillAndExpand;
-            BackgroundColor = Color.Transparent;
-            SeparatorVisibility = SeparatorVisibility.None;
-             
-            ItemTemplate = new DataTemplate(() =>
-            {
-                BackgroundColor = Color.Transparent;
-                var _Label = new Label() { FontSize = 17, TextColor = AppStyle.DarkLabelColor, FontAttributes = FontAttributes.Bold };
-                _Label.SetBinding(Label.TextProperty, "Title");
+			VerticalOptions = LayoutOptions.FillAndExpand;
+			BackgroundColor = Color.White;
+			SeparatorVisibility = SeparatorVisibility.None;
 
-                RowHeight = 40;
 
-                var _Img = new Image() { WidthRequest = 30, HeightRequest = 30 };
-                _Img.SetBinding(Image.SourceProperty, "Icon");
 
-                return new ViewCell
-                {
-                    View = new StackLayout
-                    {
-                        Orientation = StackOrientation.Horizontal,
-                        Padding = new Thickness(10, 0, 0, 0),
-                        Children =
-                                        {
-                                            _Img,
-                                            new StackLayout
-                                            {
-                                                Padding = 2,
-                                                VerticalOptions = LayoutOptions.Center,
-                                                Spacing =0,
-                                                Children =
-                                                    {
-                                                       _Label,
-                                                    }
-                                                }
-                                        }
-                    }
-                };
 
-            });
-        }
-    }
+
+			ItemTemplate = new DataTemplate(() =>
+				{
+					BackgroundColor = Color.Transparent;
+					var _Label = new Label() 
+					{ 
+						FontSize = 16, TextColor = AppStyle.DarkLabelColor ,
+						FontAttributes = FontAttributes.None,HorizontalOptions= LayoutOptions.Center
+					};
+					_Label.SetBinding(Label.TextProperty, "Title");
+
+					RowHeight = 50;
+
+					var _Img = new Image() { WidthRequest =30, HeightRequest = 30};
+					_Img.SetBinding(Image.SourceProperty, "Icon");
+
+					return new ViewCell                                       
+					{
+						View = new StackLayout
+						{
+							Orientation = StackOrientation.Horizontal,
+							Padding = new Thickness(18,0,0,0),
+							Children =
+							{
+								_Img,
+								new StackLayout
+								{
+									Padding = new Thickness(15,0,0,0)   ,
+									VerticalOptions = LayoutOptions.Center,
+									Spacing =0,
+									Children =
+									{
+										_Label,
+									}
+									}
+							}
+							}
+					};
+
+				});
+		}
+	}
 }

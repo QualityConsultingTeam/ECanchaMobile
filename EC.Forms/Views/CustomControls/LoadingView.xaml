@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="EC.Forms.LoadingView">
+	<ScrollView>
+    <StackLayout Padding="30" HorizontalOptions="Center" VerticalOptions="Center">
+      <Image  Source="logo.png"  Aspect="AspectFit " HeightRequest="300" />
+      <StackLayout IsVisible="{Binding SendingFeed}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  >
+        <ActivityIndicator Color="Lime"  IsRunning="True"   HorizontalOptions="CenterAndExpand" />
+        <Label Text="Iniciando Sesion...." TextColor="Black" FontSize="22" HorizontalOptions="CenterAndExpand"    />
+        <Label Text="" FontSize="18" TextColor="Black" HorizontalOptions="CenterAndExpand"    />
+      </StackLayout>
+    </StackLayout>
+  </ScrollView>
+</ContentPage>

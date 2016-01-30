@@ -6,16 +6,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace EC.Forms.Views
 {
+	[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginView : ContentPage
     {
         public LoginView()
         {
             InitializeComponent();
-            this.BindingContext = new LoginViewModel();
-            LoginButton.Clicked += LoginButton_Clicked;
+            this.BindingContext = new LoginViewModel(this);
+         //   LoginButton.Clicked += LoginButton_Clicked;
         }
 
         private void LoginButton_Clicked(object sender, EventArgs e)

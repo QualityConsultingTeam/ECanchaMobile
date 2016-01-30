@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
-using XLabs;
+
 
 namespace EC.Forms.Views
 {

@@ -194,5 +194,19 @@ namespace EC.Forms
 
 
         }
+
+		public static Style DefaultStack
+		{
+			get
+			{
+				return new Style(typeof(StackLayout))
+				{
+					Setters = { new Setter { Property = StackLayout.VerticalOptionsProperty, Value =LayoutOptions.FillAndExpand },
+						new Setter { Property = StackLayout.HorizontalOptionsProperty, Value =LayoutOptions.FillAndExpand}
+					}
+				};
+			}
+		}
+
     }
 }

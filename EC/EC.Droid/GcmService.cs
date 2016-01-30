@@ -14,9 +14,11 @@ using Gcm.Client;
 
 using System.Diagnostics;
 using WindowsAzure.Messaging;
+using Android.Support.V4.App;
+using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
 
-[assembly: Permission(Name = "EC.com.permission.C2D_MESSAGE")]
-[assembly: UsesPermission(Name = "EC.com.permission.C2D_MESSAGE")]
+[assembly: Permission(Name = "enlacancha.com.permission.C2D_MESSAGE")]
+[assembly: UsesPermission(Name = "enlacancha.com.permission.C2D_MESSAGE")]
 [assembly: UsesPermission(Name = "com.google.android.c2dm.permission.RECEIVE")]
 
 //GET_ACCOUNTS is only needed for android versions 4.0.3 and below
@@ -89,25 +91,12 @@ namespace EC.Droid
 
         }
 
-        public async void Register(Microsoft.WindowsAzure.MobileServices.Push push, IEnumerable<string> tags)
-        {
-            try
-            {
-                const string template = "{\"data\":{\"message\":\"$(message)\"}}";
-
-                await push.RegisterTemplateAsync(RegistrationID, template, "mytemplate", tags);
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
-                Debugger.Break();
-            }
-        }
+        
 
         protected override void OnUnRegistered(Context context, string registrationId)
         {
             Log.Verbose(PushHandlerBroadcastReceiver.TAG, "GCM Unregistered: " + registrationId);
-            createNotification("GcmService Unregistered...", "The device has been unregistered, Tap to View!");
+            //createNotification("GcmService Unregistered...", "The device has been unregistered, Tap to View!");
         }
 
         protected override void OnMessage(Context context, Intent intent)
@@ -131,7 +120,7 @@ namespace EC.Droid
             string message = intent.Extras.GetString("message");
             if (!string.IsNullOrEmpty(message))
             {
-                createNotification("New todo item!", "Todo item: " + message);
+                createNotification("En la cancha", message);
                 return;
             }
 
@@ -157,28 +146,66 @@ namespace EC.Droid
             Log.Error(PushHandlerBroadcastReceiver.TAG, "GCM Error: " + errorId);
         }
 
-        void createNotification(string title, string desc)
-        {
-            //Create notification
-            var notificationManager = GetSystemService(Context.NotificationService) as NotificationManager;
 
-            //Create an intent to show ui
-            var uiIntent = new Intent(this, typeof(MainActivity));
+		void createNotification(string title, string desc,int id=0)
+		{
+			// Pass the current button press count value to the next activity:
+			Bundle valuesForActivity = new Bundle();
+			valuesForActivity.PutInt("feedId", id);
 
-            //Create the notification
-            var notification = new Notification(Android.Resource.Drawable.SymActionEmail, title);
+			// When the user clicks the notification, SecondActivity will start up.
+			Intent resultIntent = new Intent(this, typeof(MainActivity));
 
-            //Auto cancel will remove the notification once the user touches it
-            notification.Flags = NotificationFlags.AutoCancel;
+			// Pass some values to SecondActivity:
+			resultIntent.PutExtras(valuesForActivity);
 
-            //Set the notification info
-            //we use the pending intent, passing our ui intent over which will get called
-            //when the notification is tapped.
-            notification.SetLatestEventInfo(this, title, desc, PendingIntent.GetActivity(this, 0, uiIntent, 0));
+			// Construct a back stack for cross-task navigation:
+			TaskStackBuilder stackBuilder = TaskStackBuilder.Create(this);
+			stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(MainActivity)));
+			stackBuilder.AddNextIntent(resultIntent);
 
-            //Show the notification
-            notificationManager.Notify(1, notification);
-        }
+			// Create the PendingIntent with the back stack:            
+			PendingIntent resultPendingIntent =
+				stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
+
+			// vibration Pattern
+			long[] pattern = {500,500,500,500,500,500,500,500,500};
+
+
+			// Build the notification:
+			NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+				.SetAutoCancel(true)                    // Dismiss from the notif. area when clicked
+				.SetContentIntent(resultPendingIntent)  // Start 2nd activity when the intent is clicked.
+				.SetContentTitle(title)
+				//.SetNumber(777)                       // Display the count in the Content Info
+				//.SetLights( Color.BLUE, 500, 500)
+
+				.SetVibrate(pattern)
+				.SetSmallIcon(Resource.Drawable.ic_launcher)  // Display this icon
+				.SetTicker(desc)
+				.SetSound( GetNotificationSound(0)  )
+				.SetStyle(new NotificationCompat.BigTextStyle().BigText(desc))
+				.SetContentText(desc); // The message to display.
+
+
+			// Finally, publish the notification:
+			NotificationManager notificationManager =
+				(NotificationManager)GetSystemService(Context.NotificationService);
+			notificationManager.Notify(id, builder.Build());
+
+			// Increment the button press count:
+
+		}
+
+		private Android.Net.Uri GetNotificationSound(int categoryId)
+		{
+			//Android.Net.Uri sound = Android.Net.Uri.Parse ("android.resource://"+this.BaseContext.PackageName+"/"+Resource.Raw.oritaaviso);
+
+			var defaultSound = Android.Media.RingtoneManager.GetDefaultUri (Android.Media.RingtoneType.Notification);
+
+			//return sound;
+			return defaultSound;
+		}
 
         private NotificationHub Hub { get; set; }
 

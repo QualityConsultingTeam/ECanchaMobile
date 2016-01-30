@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="EC.Forms.FieldDetailsView"
+	BackgroundColor="White" Title="Regresar"> 
+ <StackLayout>
+   
+
+   <StackLayout IsVisible="{Binding IsBusy}"    HorizontalOptions="CenterAndExpand">
+     <ActivityIndicator Color="Blue"  IsRunning="True"  VerticalOptions="CenterAndExpand" />
+     <Label Text="Cargando..." TextColor="White" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+   </StackLayout>
+   
+         <ScrollView   IsVisible="{Binding IsDetailsVisible}" >
+          <StackLayout VerticalOptions="FillAndExpand"  Orientation="Vertical" Padding="20,0,20,0">
+    
+    <StackLayout  BackgroundColor="White" Orientation="Vertical" Padding="0">
+      <StackLayout BackgroundColor="White" Orientation="Vertical" Padding="22,22,22,0" >
+       <StackLayout.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding GoBackCommand}" />
+        </StackLayout.GestureRecognizers>
+      <Label Font="22" TextColor="Black" Text="{Binding Feed.Title}"/>
+      <Label Text="{Binding Feed.Author}" Font="20" TextColor="Black"/>
+     
+      <!--{Binding ShowDetailsCommand}-->
+
+      <StackLayout  Padding="5,0">
+
+       <Label Text="{Binding DateStart, Converter={StaticResource dateConverter}}" Font="17" TextColor="Gray" />
+       
+
+      
+        <Label Text="{Binding Feed.Content}" Font="16" TextColor="Black"/>
+       
+        <Label Text="{Binding Feed.Contact}" Font="16" TextColor="Black" />
+          
+      </StackLayout> 
+      <!--
+      <StackLayout>
+
+      	<StackLayout.GestureRecognizers>
+         
+        </StackLayout.GestureRecognizers>
+      <Image Source="{Binding Feed.Image}" HorizontalOptions="Fill" />
+      </StackLayout>
+      -->
+    </StackLayout>
+      <StackLayout  BackgroundColor="#E2E0E0" Orientation="Horizontal" 
+                    HorizontalOptions="FillAndExpand" 
+                    Padding="25,7,10,3" Spacing="0" 
+                    VerticalOptions="Center">
+      
+        <StackLayout.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding LikeCommand}" />
+        </StackLayout.GestureRecognizers>
+          <Image Source="valora.png" HeightRequest="44" VerticalOptions="CenterAndExpand"></Image>
+          
+           <Label Text="{Binding SelectedOption}" TextColor="{Binding LikeTextColor}" FontSize="17" VerticalOptions="CenterAndExpand"></Label>
+          
+        </StackLayout>
+    </StackLayout>
+    
+ 
+  </StackLayout>
+          </ScrollView>
+          	 
+		  
+ </StackLayout>
+  
+</ContentPage>

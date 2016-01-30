@@ -8,9 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
-
-namespace EC.Forms.Views
+using Xamarin.Forms.Xaml;
+namespace EC.Forms.Views 
 {
+	[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class FieldView : ContentPage
     {
         public FieldView()
@@ -18,7 +19,7 @@ namespace EC.Forms.Views
             InitializeComponent();
             // this.BindingContext = new FieldsViewModel(this);
 
-            this.BindingContext = new FieldsViewModel(this.Navigation);
+            this.BindingContext = new FieldsViewModel(this);
             //listView.ItemSelected += ListView_ItemSelected;
         }
 

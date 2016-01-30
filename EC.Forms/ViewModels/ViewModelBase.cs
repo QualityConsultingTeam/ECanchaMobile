@@ -9,11 +9,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using XLabs.Forms.Mvvm;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using Xamarin.Forms;
+
 
 namespace EC.Forms.ViewModels
 {
-    public  class ViewModelBase: ViewModel
+	public  class ViewModelBase: INotifyPropertyChanged
     {
 
         public ViewModelBase()
@@ -25,21 +28,56 @@ namespace EC.Forms.ViewModels
             CoreClient = new CoreClient(_settings, new ApplicationStorageService(_dataRepository));
         }
 
-        #region Private Fields
+		public virtual bool IsBusy
+		{
+			get { return _isBusy; }
+			set { _isBusy = value; OnPropertyChange("IsBusy"); }
+		}
 
-        
+		private bool _isBusy { get; set; }
+
+		#region INotifyPropertyChanged implementation
+		public event PropertyChangedEventHandler PropertyChanged;
+		#endregion
+
+		protected Page _currentPage;
+
+		public void OnPropertyChange([CallerMemberName] string propertyName=null){
+			if (PropertyChanged != null)
+				PropertyChanged (this, new PropertyChangedEventArgs (propertyName));
+		}
 
 
-        protected ICoreClient CoreClient { get; private set; }
-        private readonly ILocationServiceSingleton _locationService;
 
 
-        public static IApplicationSettingServiceSingleton _settings { get; set; }
-
-        public static IApplicationDataRepository _dataRepository { get; set; }
+		#region Private Fields
 
 
 
-        #endregion
+		protected ICoreClient CoreClient { get; private set; }
+		private readonly ILocationServiceSingleton _locationService;
+
+
+		public static IApplicationSettingServiceSingleton _settings { get; set; }
+
+		public static IApplicationDataRepository _dataRepository { get; set; }
+
+
+
+		protected void SetObservableProperty<T>(
+			ref T field, 
+			T value,
+			[CallerMemberName] string propertyName = "")
+		{
+			if (EqualityComparer<T>.Default.Equals(field, value)) return;
+			field = value;
+			OnPropertyChange(propertyName);
+		}
+
+		internal virtual Task Initialize (params object[] args)
+		{
+			return Task.FromResult (0);
+		}
+		#endregion
     }
 }

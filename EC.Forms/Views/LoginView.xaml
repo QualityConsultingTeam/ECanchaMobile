@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EC.Forms.Views.LoginView"
-              xmlns:local="clr-namespace:EC.Forms.Views;assembly=EC.Forms" Title="LOGIN" BackgroundImage="bggrass.jpg"  >
+              xmlns:local="clr-namespace:EC.Forms.Views;assembly=EC.Forms" Title="LOGIN" BackgroundColor="Gray" >
   <!--<ContentPage.Resources>
     <ResourceDictionary>
       <Style TargetType="Entry">
@@ -16,18 +16,19 @@
 
 
   <ScrollView >
-   <StackLayout   HorizontalOptions="Center" VerticalOptions="Center">
+   <StackLayout   HorizontalOptions="Center" VerticalOptions="Center" Padding="2">
 
       
         
         <Image  Source="logo.png"  Aspect="AspectFit " HeightRequest="300" />
  
-        <local:CustonEmtry Placeholder="Email" Text="{Binding Email}"   TextColor="White"/>
+        <local:CustonEmtry Placeholder="Email" Text="{Binding Email}" PlaceholderColor="White" Keyboard="Email"  TextColor="Teal"/>
 
-        <local:CustonEmtry Placeholder="Password" Text="{Binding Password}" TextColor="White"  />
+        <local:CustonEmtry Placeholder="Password" Text="{Binding Password}"  PlaceholderColor="White" TextColor="Teal"  />
 
 
-        <local:ButtonTextCentered  Text="GO!" x:Name="LoginButton" TextColor="White" BackgroundColor="#de1e24" Command="{Binding LoginCommand}"/>
+        <Button  TextColor="White" Text="Login" BorderColor="Teal" Command="{Binding LoginCommand}" HorizontalOptions="Center" />
+
 
       </StackLayout>
  

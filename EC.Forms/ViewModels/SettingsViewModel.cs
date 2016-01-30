@@ -11,7 +11,7 @@ using EC.Model;
 
 namespace EC.Forms.ViewModels
 {
-    public class SettingsViewModel : ViewModelBase
+	public class SettingsViewModel : ViewModelBase
     {
 
         public SettingsViewModel(Action<Page> navigateAsync)

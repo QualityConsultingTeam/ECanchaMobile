@@ -1,6 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="enlacancha.com">
-	<uses-sdk android:minSdkVersion="18" android:targetSdkVersion="23" />
-	<application android:label="En La Cancha Club" android:icon="@drawable/ic_launcher" android:theme="@style/MyTheme"></application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:installLocation="auto" package="enlacancha.com"
+    android:versionCode="1">
+	<uses-sdk android:minSdkVersion="15" />
+	<application android:label="Cancha" android:icon="@drawable/ic_launcher" android:theme="@style/MyTheme"></application>
 	<uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 </manifest>

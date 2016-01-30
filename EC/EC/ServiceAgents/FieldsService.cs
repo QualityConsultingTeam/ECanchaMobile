@@ -26,10 +26,15 @@
 
         public async Task<List<Field>> GetFields(FilterOptionModel filter)
         {
+			try{
             string url = String.Format(CultureInfo.InvariantCulture
                , "{0}/api/canchas", _urlPrefix);
 
             return await base.PostAsync<FilterOptionModel,List<Field>>(url,filter);
+			}
+			catch(Exception ex) {
+				return null;
+			}
         }
 
         public async Task<List<Field>> GetFields(string keywords, string lat, string lon)

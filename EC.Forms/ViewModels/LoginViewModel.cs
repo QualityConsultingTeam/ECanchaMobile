@@ -11,9 +11,9 @@ namespace EC.Forms.ViewModels
     public class LoginViewModel : ViewModelBase
     {
 
-        public LoginViewModel()
+        public LoginViewModel(Page page)
         {
-
+			this._currentPage = page;
         }
 
 
@@ -21,30 +21,40 @@ namespace EC.Forms.ViewModels
 
         public string Email {
             get { return _email; }
-            set { SetProperty(ref _email, value); }
+			set { _email = value;OnPropertyChange ("Email");}
         }
 
         public string Password {
             get { return _password; }
-            set { SetProperty(ref _password, value); }
+			set { _password = value; OnPropertyChange ("Password"); }
         }
 
         public Command LoginCommand {
             get
             {
-                return _loginCommand ??
-                    (_loginCommand = new Command(async () => await LoginAction(),
-                    () => !string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password)));
+				return _loginCommand ??
+				(_loginCommand = new Command (async () => await LoginAction ()));
+                   // () => !string.IsNullOrEmpty(Email) && !string.IsNullOrEmpty(Password)));
             }
         }
 
         private async Task LoginAction()
         {
+			if (string.IsNullOrEmpty (Email) || string.IsNullOrEmpty (Password))
+				return;
+			await this._currentPage.Navigation.PushModalAsync (new LoadingView ());
             var result = await CoreClient.AccountService.Login(Email, Password, false);
 
             if (!string.IsNullOrEmpty(result.access_token)){
-                await this.Navigation.PushAsync(new FieldView());
+                
+				await this._currentPage.Navigation.PopModalAsync ();
+
+				await this._currentPage.Navigation.PopToRootAsync ();
+
+				return;
             }
+
+			await this._currentPage.Navigation.PopModalAsync ();
 
         }
         #endregion

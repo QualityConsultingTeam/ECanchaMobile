@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using XLabs.Forms.Mvvm;
+
 
 namespace EC.Forms.ViewModels
 {
@@ -19,27 +19,24 @@ namespace EC.Forms.ViewModels
     public class FieldsViewModel : ViewModelBase
     {
 
-        public FieldsViewModel(INavigation navigation)
+        public FieldsViewModel(Page page)
         {
-            this.Navigation = new ViewModelNavigation(navigation);
+			this._currentPage = page;
         }
          
     
         #region ListView Update News
     
-        public bool IsBusy
-        {
-            get { return isBusy; }
-            set
-            {
-                SetProperty(ref isBusy,value);
-            }
-        }
+     
 
         public bool IsBusyActivity
         {
             get { return _isBusyActivity; }
-            set { SetProperty(ref _isBusyActivity, value); }
+			set 
+			{ 
+				_isBusyActivity = value; 
+				OnPropertyChange ("IsBusyActivity");
+			}
         }
 
         public Command RefreshFieldsCommand
@@ -56,11 +53,8 @@ namespace EC.Forms.ViewModels
         {
             get
             {
-                return _goToDetailsCommand ??
-                    (_goToDetailsCommand = new Command(() =>
-                        {
-                            this.Navigation.PushAsync(new WooferPage());
-                        }));
+				return _goToDetailsCommand ??
+				(_goToDetailsCommand = new Command (async() => await this._currentPage.Navigation.PushAsync (new WooferPage ())));
             }
         }
 
@@ -74,7 +68,8 @@ namespace EC.Forms.ViewModels
             get { return _fields; }
             set
             {
-                SetProperty(ref _fields, value);
+				_fields = value;
+				OnPropertyChange ("FieldsCollection");
             }
         }
 
@@ -82,7 +77,7 @@ namespace EC.Forms.ViewModels
 
         internal void FetchInBackground()
         {
-            Task.Run (GetFieldsFromApiAsync);
+			Task.Run(()=>GetFieldsFromApiAsync());
 
         }
 
@@ -101,7 +96,7 @@ namespace EC.Forms.ViewModels
             var filter = new FilterOptionModel() { date = DateTime.Now };
 
             var collection= await CoreClient.FieldsService.GetFields(filter);
-            FieldsCollection = new ObservableCollection<Field>(collection);
+			if(collection!=null && collection.Any()) FieldsCollection = new ObservableCollection<Field>(collection);
             IsBusy = false;
         }
 

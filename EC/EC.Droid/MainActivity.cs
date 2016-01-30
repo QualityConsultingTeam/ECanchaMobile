@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using ImageCircle.Forms.Plugin.Droid;
 using Xamarin.Forms.Platform.Android;
+using Gcm.Client;
 
 namespace EC.Droid
 {
@@ -30,8 +31,54 @@ namespace EC.Droid
 
             ImageCircleRenderer.Init();
             LoadApplication(new EC.Forms.App());
+
+			RegisterNotifications ();
             
         }
+		private void RegisterNotifications()
+		{
+			try
+			{
+				// Check to ensure everything's setup right
+				GcmClient.CheckDevice(this);
+				GcmClient.CheckManifest(this);
+
+				// Register for push notifications
+				System.Diagnostics.Debug.WriteLine("Registering...");
+				GcmClient.Register(this, PushHandlerBroadcastReceiver.SENDER_IDS);
+			}
+			catch (Java.Net.MalformedURLException)
+			{
+				CreateAndShowDialog(new Exception("There was an error creating the Mobile Service. Verify the URL"), "Error");
+			}
+			catch (Exception e)
+			{
+				CreateAndShowDialog(e, "Error");
+			}
+		}
+
+//		public static MainActivity DefaultService
+//		{
+//			get { return instance; }
+//		}
+
+		void CreateAndShowDialog(Exception exception, String title)
+		{
+			CreateAndShowDialog(exception.Message, title);
+		}
+
+		void CreateAndShowDialog(string message, string title)
+		{
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+			builder.SetMessage(message);
+			builder.SetTitle(title);
+			builder.SetIcon(Resource.Drawable.ic_launcher);
+			builder.Create().Show();
+		}
+		static MainActivity instance;
     }
+
+
 }
 
