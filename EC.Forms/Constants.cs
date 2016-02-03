@@ -40,7 +40,7 @@ namespace EC.Forms
 
     public static class AppStyle
     {
-        public static Color BaseColor = Color.FromHex("#464646");
+		public static Color BaseColor = Color.FromHex("#cce5ff");
         public static Color BrandColor = Color.FromHex("#F2995D");
         public static Color DarkLabelColor = Color.FromHex("#747474");
         public static Color LightLabelColor = Color.FromHex("#D5D5D5");
@@ -171,7 +171,7 @@ namespace EC.Forms
                 return new Style(typeof(Page))
                 {
                     Setters = {
-                        new Setter { Property = Page.BackgroundColorProperty, Value = BaseColor },
+                        new Setter { Property = Page.BackgroundColorProperty, Value =  Color.FromHex("#3a3a2c") },
                         new Setter { Property = Page.IconProperty, Value = "ic_menu_black_18dp.png" },
                         new Setter { Property = Page.TitleProperty, Value = "Settings" }
                     }

@@ -16,7 +16,7 @@ namespace EC.Forms.Views
 
 			var createFeedToolbarItem = new ToolbarItem()
 			{
-				Icon = "ic_location_searching_black_24dp.png",
+				Icon = "ic_search_white_24dp.png",
 				Text = "Edit",
 			};
 			//createFeedToolbarItem.SetBinding(ToolbarItem.CommandProperty, "CreateFeedCommand");

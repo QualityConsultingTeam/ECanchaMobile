@@ -191,8 +191,9 @@ namespace EC.Droid
 				.SetAutoCancel(true)                    // Dismiss from the notif. area when clicked
 				.SetContentIntent(resultPendingIntent)  // Start 2nd activity when the intent is clicked.
 				.SetContentTitle(title)
-				//.SetNumber(777)                       // Display the count in the Content Info
-				//.SetLights( Color.BLUE, 500, 500)
+                //.SetNumber(777)                       // Display the count in the Content Info
+                //.SetLights( Color.BLUE, 500, 500)
+                .SetLights(global::Android.Graphics.Color.Blue, 300, 1000)
 
 				.SetVibrate(pattern)
 				.SetSmallIcon(Resource.Drawable.ic_launcher)  // Display this icon

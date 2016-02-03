@@ -48,6 +48,6 @@ namespace EC.Forms
             // Handle when your app resumes
         }
 
-      
+        public static Action<string> PostSuccessFacebookAction { get; set; }
     }
 }

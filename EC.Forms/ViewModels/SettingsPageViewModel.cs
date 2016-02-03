@@ -34,15 +34,15 @@ namespace EC.Forms
 					Id = 1,
 					Title = "Buscar Cancha",
 					TargetType = typeof(HomeTabs),
-					Icon = "ic_location_searching_black_24dp.png",
+					Icon = "ic_location_searching_white_24dp.png",
 				});
  
 			MenuItems.Add(new EC.Model.MenuItem()
 				{
 					Id = 2,
-					Title = "Iniciar Sesion",
+					Title = "Mi Cuenta",
 					TargetType = typeof(LoginView),
-					Icon = "ic_account_circle_black_24dp.png",
+					Icon = "ic_account_circle_white_24dp.png",
 				});
 			
 		}

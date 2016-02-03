@@ -88,7 +88,7 @@ namespace EC.Forms.Views
 					BackgroundColor = Color.Transparent;
 					var _Label = new Label() 
 					{ 
-						FontSize = 16, TextColor = AppStyle.DarkLabelColor ,
+						FontSize = 16, TextColor = Color.White, //AppStyle.DarkLabelColor ,
 						FontAttributes = FontAttributes.None,HorizontalOptions= LayoutOptions.Center
 					};
 					_Label.SetBinding(Label.TextProperty, "Title");

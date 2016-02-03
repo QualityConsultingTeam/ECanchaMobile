@@ -10,7 +10,7 @@ namespace EC.Forms.Views
 		public SettingsUserView ()
 		{
 			Content = new StackLayout () {
-				Padding = new Thickness(0,10,0,25),
+				Padding = new Thickness(10,10,10,5),
 				Spacing = 15,
 				Orientation = StackOrientation.Horizontal,
 				Children = {

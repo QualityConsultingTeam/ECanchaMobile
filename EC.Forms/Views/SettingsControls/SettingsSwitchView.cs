@@ -36,12 +36,12 @@ namespace EC.Forms.Views
 					new Label () {
 						HorizontalOptions = LayoutOptions.EndAndExpand,
 						Style = AppStyle.SettingSwitchInstructionStyle,
-						Text = "OFF"
+						Text = ""
 					},
 					toggle,
 					new Label () { 
 						Style = AppStyle.SettingSwitchInstructionStyle,
-						Text = "ON"
+						Text = ""
 					}
 				}
 			};

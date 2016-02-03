@@ -2,31 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EC.Forms.Views.LoginView"
-              xmlns:local="clr-namespace:EC.Forms.Views;assembly=EC.Forms" Title="LOGIN" BackgroundColor="Red" BackgroundImage="bggrass.jpg" >
-  <!--<ContentPage.Resources>
-    <ResourceDictionary>
-      <Style TargetType="Entry">
-        <Setter Property="BackgroundColor" Value="White"/>
-        <Setter Property="HeightRequest" Value="10"/>
-        <Setter Property="TextColor" Value="Gray"/>
-      </Style>
-    </ResourceDictionary>
-  </ContentPage.Resources>-->
+             xmlns:local="clr-namespace:EC.Forms.Views;assembly=EC.Forms" Title="LOGIN" 
+             BackgroundImage="bggrass.jpg"
 
-
+              >
+  
 
   <ScrollView >
-   <StackLayout   HorizontalOptions="Center" VerticalOptions="Center" Padding="10">
+   <StackLayout   HorizontalOptions="Center" VerticalOptions="Center" Padding="1">
 
       
         
-        <Image  Source="logo.png"  Aspect="AspectFit " HeightRequest="300" />
+       <Image  Source="loginIcon.png"  Aspect="AspectFit "  />
+
+        <local:FacebookLoginButton  Text="Login With Facebook" VerticalOptions="Start" 
+                HorizontalOptions="FillAndExpand"/>
  
         <local:CustonEmtry Placeholder="Email" Text="{Binding Email}" PlaceholderColor="White" Keyboard="Email"  TextColor="White"/>
 
         <local:CustonEmtry Placeholder="Password" Text="{Binding Password}"  PlaceholderColor="White"  TextColor="White"  />
 
-
+  
         <Button  TextColor="White" Text="Login" BorderColor="White" Command="{Binding LoginCommand}"   HorizontalOptions="Center" />
 
 

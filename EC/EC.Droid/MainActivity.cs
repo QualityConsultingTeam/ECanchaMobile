@@ -9,6 +9,8 @@ using Android.OS;
 using ImageCircle.Forms.Plugin.Droid;
 using Xamarin.Forms.Platform.Android;
 using Gcm.Client;
+//using Xamarin.Facebook;
+using Android.Content;
 
 namespace EC.Droid
 {
@@ -18,6 +20,9 @@ namespace EC.Droid
         
     public class MainActivity : FormsAppCompatActivity
     {
+
+      //  public static ICallbackManager CallbackManager = CallbackManagerFactory.Create();
+        public static readonly string[] PERMISSIONS = new[] { "publish_actions" };
         protected override void OnCreate(Bundle bundle)
         {
             ToolbarResource = Resource.Layout.toolbar;
@@ -26,6 +31,8 @@ namespace EC.Droid
 
 
             base.OnCreate(bundle);
+
+             //FacebookSdk.SdkInitialize(this.ApplicationContext);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
@@ -76,7 +83,13 @@ namespace EC.Droid
 			builder.SetIcon(Resource.Drawable.ic_launcher);
 			builder.Create().Show();
 		}
-		static MainActivity instance;
+        //static MainActivity instance;
+
+        //protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        //{
+        //    base.OnActivityResult(requestCode, resultCode, data);
+        //    CallbackManager.OnActivityResult(requestCode, (int)resultCode, data);
+        //}
     }
 
 
