@@ -3,7 +3,11 @@
     android:installLocation="auto" package="enlacancha.com"
     android:versionCode="1">
 	<uses-sdk android:minSdkVersion="15" />
-	<application android:label="Cancha" android:icon="@drawable/ic_launcher" android:theme="@style/MyTheme"></application>
+	<application android:label="Cancha" android:icon="@drawable/ic_launcher" android:theme="@style/MyTheme">
+    	<activity android:name="com.facebook.LoginActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:label="@string/app_name" />
+		<activity android:name="com.facebook.FacebookActivity" android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:label="@string/app_name" />
+  </application>
+  <uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
 	<uses-permission android:name="android.permission.VIBRATE" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />

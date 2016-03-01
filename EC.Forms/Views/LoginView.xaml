@@ -4,7 +4,7 @@
              x:Class="EC.Forms.Views.LoginView"
              xmlns:local="clr-namespace:EC.Forms.Views;assembly=EC.Forms" Title="LOGIN" 
              BackgroundImage="bggrass.jpg"
-
+            
               >
   
 
@@ -15,18 +15,19 @@
         
        <Image  Source="loginIcon.png"  Aspect="AspectFit "  />
 
-        <local:FacebookLoginButton  Text="Login With Facebook" VerticalOptions="Start" 
-                HorizontalOptions="FillAndExpand"/>
+         
  
         <local:CustonEmtry Placeholder="Email" Text="{Binding Email}" PlaceholderColor="White" Keyboard="Email"  TextColor="White"/>
 
         <local:CustonEmtry Placeholder="Password" Text="{Binding Password}"  PlaceholderColor="White"  TextColor="White"  />
 
+     
   
         <Button  TextColor="White" Text="Login" BorderColor="White" Command="{Binding LoginCommand}"   HorizontalOptions="Center" />
 
+       
 
-      </StackLayout>
+   </StackLayout>
  
   </ScrollView>
 
