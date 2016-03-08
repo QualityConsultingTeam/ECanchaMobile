@@ -47,7 +47,29 @@ namespace EC.Forms
         {
             // Handle when your app resumes
         }
+        public IHUDProvider _hud;
+        public static int AnimationSpeed = 250;
 
-        public static Action<string> PostSuccessFacebookAction { get; set; }
+        //public static NotificationPayload PendingNotificationPayload
+        //{
+        //    get;
+        //    private set;
+        //}
+
+        public IHUDProvider Hud
+        {
+            get
+            {
+                return _hud ?? (_hud = DependencyService.Get<IHUDProvider>());
+            }
+        }
+
+        public new static App Current
+        {
+            get
+            {
+                return (App)Application.Current;
+            }
+        }
     }
 }
