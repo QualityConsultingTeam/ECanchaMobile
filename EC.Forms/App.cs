@@ -71,5 +71,51 @@ namespace EC.Forms
                 return (App)Application.Current;
             }
         }
+
+        public static Athlete CurrentAthlete
+        {
+            get
+            {
+                return Settings.Instance.AthleteId == null ? null : DataManager.Instance.Athletes.Get(Settings.Instance.AthleteId);
+            }
+        }
+
+        public static bool IsNetworkRechable
+        {
+            get;
+            set;
+        }
+
+        public static List<string> PraisePhrases
+        {
+            get;
+            set;
+        }
+
+        public static List<string> AvailableLeagueColors
+        {
+            get;
+            set;
+        }
+
+        public Dictionary<string, string> UsedLeagueColors
+        {
+            get;
+            set;
+        } = new Dictionary<string, string>();
+
+        public static string AuthToken
+        {
+            get;
+            set;
+        }
+
+        public static string AuthTokenAndType
+        {
+            get
+            {
+                return AuthToken == null ? null : "{0} {1}".Fmt("Bearer", AuthToken);
+            }
+        }
     }
 }

@@ -16,7 +16,7 @@ using Xamarin.Forms;
 
 namespace EC.Forms.ViewModels
 {
-	public  class ViewModelBase: INotifyPropertyChanged
+	public  class ViewModelBase: BaseNotify
     {
 
         public ViewModelBase()

@@ -44,8 +44,6 @@
     <Compile Include="DocumentResponse\Field.cs" />
     <Compile Include="DocumentResponse\FilterOptionModel.cs" />
     <Compile Include="DocumentResponse\Login.cs" />
-    <Compile Include="Infrastructure\Abstractions\Authentication\IAuthentication.cs" />
-    <Compile Include="Infrastructure\Abstractions\Authentication\IToastNotifier.cs" />
     <Compile Include="Infrastructure\Abstractions\Repositories\IApplicationDataRepository.cs" />
     <Compile Include="Infrastructure\Abstractions\Services\IApplicationSettingServiceSingleton.cs" />
     <Compile Include="Infrastructure\Abstractions\Services\IApplicationStorageService.cs" />
@@ -56,6 +54,7 @@
     <Compile Include="Messages\ReloadDataMessage.cs" />
     <Compile Include="Model\Enums\RideDetailWorkflow.cs" />
     <Compile Include="Model\GroupRide.cs" />
+    <Compile Include="Model\Identity.cs" />
     <Compile Include="Model\Location.cs" />
     <Compile Include="Model\LocationCalculatedEventArgs.cs" />
     <Compile Include="Model\MenuItem.cs" />
